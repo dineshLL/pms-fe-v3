@@ -1,0 +1,7 @@
+.internal-sidenav {
+    border: 1px solid $light-gray;
+    padding: 5px;
+    min-height: calc(100vh - 103px);  
+    max-height: calc(100vh - 103px);
+    overflow: auto;
+}

@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>{{'Pensionable Information' | uppercase}}</h2>
+<br>
+<div [formGroup]="form">
+  <div class="col-md-10">
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Salary Code</label>
+      <div class="col-sm-6">
+        <input formControlName="salaryCode" type="text" class="form-control" placeholder="Salary Code">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Last Date of Increment</label>
+      <div class="col-sm-6">
+        <input formControlName="lastDateOfIncrement" type="text" class="form-control" placeholder="Last Date of Increment">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Monthly Salary</label>
+      <div class="col-sm-6">
+        <input formControlName="monthlySalary" type="text" class="form-control" placeholder="Monthly Salary">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <app-service-period-tbl></app-service-period-tbl>
+    <br>
+    <app-nopay-infomation-tbl></app-nopay-infomation-tbl>
+    <br>
+    <app-salary-infomation-tbl></app-salary-infomation-tbl>
+    <br>
+    <app-allowances-infomation-tbl></app-allowances-infomation-tbl>
+    <br>
+    <app-gross-salary-infomation-tbl></app-gross-salary-infomation-tbl>
+  </div>
+</div>

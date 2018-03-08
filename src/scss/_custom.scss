@@ -1,0 +1,92 @@
+// Here you can add other styles
+@import "custom/_mat_theme.scss";
+@import "custom/_input.scss";
+@import "custom/_internal-sidenav.scss";
+@import "custom/_page-top-actionbar.scss";
+@import "custom/_internal-page.scss";
+@import "custom/_fullcalander.scss";
+@import "custom/_form-validations.scss";
+$font-size-small: 11px;
+$font-size-meduim: 18px;
+$font-size-large: 24px;
+html {
+  font-family: "Segoe UI", wf_segoe-ui_normal, "Segoe WP", Tahoma, Arial, sans-serif;
+}
+
+* {
+  border-radius: 0 !important;
+}
+
+li:focus {
+  outline: none;
+}
+
+mat-spinner {
+  float: left;
+  width: 24px;
+  height: 24px;
+  margin: 5px 10px 0px 0px;
+}
+
+.dashboard-bg {
+  background-color: #215b7d;
+}
+
+.breadcrumb {
+  background-color: $gray-600;
+  height: $sidebar-minimizer-height;
+  padding: 0 0 0 13px;
+  font-size: $font-size-small;
+}
+
+.dashboard-header-container {
+  background-color: $body-bg;
+  height: 45px;
+  padding: 0 0 0 13px;
+  font-size: $font-size-large;
+  color: $gray-100;
+}
+
+.page-title-container {
+  background-color: $gray-800;
+  height: 45px;
+  padding: 0 0 0 13px;
+  font-size: $font-size-meduim;
+  color: $gray-100;
+}
+
+.large-font {
+  font-size: 18px;
+  line-height: 30px;
+  display: inline-block;
+  max-width: 100%;
+  font-weight: 200;
+  color: $white;
+}
+
+.small-font {
+  max-width: 100%;
+  margin-top: -6px;
+  font-family: az_ea_font, "Segoe UI", wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: normal;
+  color: #bbb;
+}
+
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.breadcrumb-item.active {
+  color: $gray-200;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  color: $gray-200;
+}
+
+.list-group-item {
+  cursor: pointer;
+}

@@ -1,0 +1,36 @@
+<div fxLayout="row">
+  <div class="page-inline-menu" fxLayout="row" fxLayoutAdivgn="start center">
+    <div>
+      <h5>DASHBOARD (REGULAR PENSIONER REGISTRATION)</h5>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div fxLayout="column">
+    <div fxFlex class="title-container ">
+      <div>Overview</div>
+    </div>
+    <div fxFlex class="sub-tile-container">
+      <div fxLayout="row" fxLayoutWrap>
+        <div [routerLink]="['/material/view/inbound']" class="sub-tile" style="width: 175px; height: 85px; margin: 2.5px">
+          <div>
+            <h3 class="sub-tile-header">Pending Applications</h3>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxFlex="30" class="sub-tile-count"></div>
+            <div fxFlex class="sub-tile-title"></div>
+          </div>
+        </div>
+        <div [routerLink]="['/material/view/utilization']" class="sub-tile" style="width: 175px; height: 85px; margin: 2.5px">
+          <div>
+            <h3 class="sub-tile-header">Rejected Applications</h3>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxFlex="30" class="sub-tile-count"></div>
+            <div fxFlex class="sub-tile-title"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

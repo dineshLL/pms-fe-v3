@@ -1,0 +1,35 @@
+<div class="table table-sm table-bordered" [formGroup]="form">
+  <thead>
+    <tr>
+      <th colspan="1" style="min-width: 600px">
+          Details of the period of service</th>
+      <th>Years</th>
+      <th>Months</th>
+      <th>Days</th>
+    </tr>
+  </thead>
+  <tr formGroupName="trainedPeriod">
+    <td>Period of trained service relevant to the calculation of pension</td>
+    <td><input formControlName="years" type="text" class="form-control"></td>
+    <td><input formControlName="months" type="text" class="form-control"></td>
+    <td><input formControlName="days" type="text" class="form-control"></td>
+  </tr>
+  <tr formGroupName="wnopDeductedPeriod">
+    <td>Casual / Daily Wages from which W&OP contribution were deducted</td>
+    <td><input formControlName="years" type="text" class="form-control"></td>
+    <td><input formControlName="months" type="text" class="form-control"></td>
+    <td><input formControlName="days" type="text" class="form-control"></td>
+  </tr>
+  <tr formGroupName="permanantPeriod">
+    <td>Permanent and pensionable</td>
+    <td><input formControlName="years" type="text" class="form-control"></td>
+    <td><input formControlName="months" type="text" class="form-control"></td>
+    <td><input formControlName="days" type="text" class="form-control"></td>
+  </tr>
+  <tr formGroupName="pensionablePeriod">
+    <td>Period of service relevant to the calculation of pension</td>
+    <td><input formControlName="years" type="text" class="form-control"></td>
+    <td><input formControlName="months" type="text" class="form-control"></td>
+    <td><input formControlName="days" type="text" class="form-control"></td>
+  </tr>
+</div>

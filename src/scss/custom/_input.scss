@@ -1,0 +1,42 @@
+input[type=text] {
+    margin: 0!important;
+    width: 100%;
+}
+
+input[type=text], select, .form-control {
+    border: 1px solid $light-gray;
+    position: relative;
+    vertical-align: middle;
+    height: 29px;
+    background-color: #fff;
+    color: inherit;
+
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    transition: none;
+    -webkit-transition: none;
+}
+
+input[type=text]:focus, .form-control:focus {
+    border: 1px solid $body-bg;
+    outline: none;
+
+    box-shadow: none;
+}
+
+button:focus, .btn:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-light:not(:disabled):not(.disabled):active:focus, .btn-light:not(:disabled):not(.disabled).active:focus, .show > .btn-light.dropdown-toggle:focus {
+    box-shadow: none;
+    border: 1px dashed $body-bg;
+}

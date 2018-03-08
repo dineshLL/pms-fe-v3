@@ -1,0 +1,58 @@
+<div class="table table-sm table-bordered" [formGroup]="form">
+  <thead>
+    <tr>
+      <th colspan="1" style="min-width: 600px">Calculation of The Percentages</th>
+      <th>Reduced(%)</th>
+      <th>Unreduced(%)</th>
+    </tr>
+  </thead>
+  <tr formGroupName="percentageIfGt25">
+    <td>Percentage Entitied if the Period of Sevice in 25 Years or More</td>
+    <td>
+      <input formControlName="reduced" type="text" class="form-control">
+    </td>
+    <td>
+      <input formControlName="unreduced" type="text" class="form-control">
+    </td>
+  </tr>
+  <tr formGroupName="percentageIfLt25">
+    <td>Percentage Entitied for the for Service of 25 Years if The Period of Service is Less Than 25 Years</td>
+    <td>
+      <input formControlName="reduced" type="text" class="form-control">
+    </td>
+    <td>
+      <input formControlName="unreduced" type="text" class="form-control">
+    </td>
+  </tr>
+  <tr formGroupName="deductablePercentage">
+    <td>If less than 25 years the deductable percentage at 1% for every 6 months or for each period less than that (not necessary
+      in the event of more than 25 years)
+    </td>
+    <td>
+      <input formControlName="reduced" type="text" class="form-control">
+    </td>
+    <td>
+      <input formControlName="unreduced" type="text" class="form-control">
+    </td>
+  </tr>
+  <tr formGroupName="deductableAsPer996">
+    <td>The deductable percentage at 0.2% for one month of no pay or for each period less than that (Circular 9/96)
+    </td>
+    <td>
+      <input formControlName="reduced" type="text" class="form-control">
+    </td>
+    <td>
+      <input formControlName="unreduced" type="text" class="form-control">
+    </td>
+  </tr>
+  <tr formGroupName="netPercentage">
+    <td>The net percentage to be taken as basis for the calculation of pension for the officer after the above adjustments
+    </td>
+    <td>
+      <input formControlName="reduced" type="text" class="form-control">
+    </td>
+    <td>
+      <input formControlName="unreduced" type="text" class="form-control">
+    </td>
+  </tr>
+</div>

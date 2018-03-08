@@ -1,0 +1,53 @@
+<header class="app-header navbar">
+  <span style="color: #4F99D5; font-size: 20px; padding-left: 13px; line-height: 40px">PMS v2.0</span>
+  <ul class="nav navbar-nav ml-auto" style="border-bottom: none">
+    <!-- <li class="nav-item d-md-down-none">
+      <a class="nav-link" href="#">
+        <i class="icon-bell"></i>
+        <span class="badge badge-pill badge-danger">5</span>
+      </a>
+    </li> -->
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <li class="nav-item dropdown" dropdown placement="bottom right">
+      <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false">
+        <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="ASD" />
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+        <div class="dropdown-header text-center">
+          <strong>Account</strong>
+        </div>
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-envelope-o"></i> Messages
+          <span class="badge badge-success">12</span>
+        </a>
+        <a class="dropdown-item" [routerLink]="['/tasks']">
+          <i class="fa fa-tasks"></i> Tasks
+          <span class="badge badge-danger">2</span>
+        </a>
+        <div class="dropdown-header text-center">
+          <strong>Settings</strong>
+        </div>
+        <a class="dropdown-item" [routerLink]="['/profile/view']">
+          <i class="fa fa-user"></i> Profile</a>
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-wrench"></i> Settings</a>
+        <div class="divider"></div>
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-lock"></i> Logout</a>
+      </div>
+    </li>
+  </ul>
+</header>

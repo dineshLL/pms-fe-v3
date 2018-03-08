@@ -1,0 +1,61 @@
+<h5 mat-dialog-title>{{'Bank information' | uppercase}}</h5>
+<br>
+<h3 mat-dialog-title>{{'For Pension'}}</h3>
+<br>
+<div [formGroup]="form">
+  <div class="col-md-10" formGroupName="pension">
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Bank</label>
+      <div class="col-sm-6">
+        <input formControlName="bank" type="text" class="form-control" placeholder="Bank">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Branch</label>
+      <div class="col-sm-6">
+        <input formControlName="branch" type="text" class="form-control" placeholder="Branch">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Bank Account Number</label>
+      <div class="col-sm-6">
+        <input formControlName="accountNumber" type="text" class="form-control" placeholder="Account Number">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Confirm Bank Account Number</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" placeholder="Conform Account Number">
+      </div>
+    </div>
+  </div>
+  <br>
+  <h3 mat-dialog-title>{{'For Gratuity'}}</h3>
+  <br>
+  <div class="col-md-10" formGroupName="gratuity">
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Bank</label>
+      <div class="col-sm-6">
+        <input formControlName="bank" type="text" class="form-control" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Branch</label>
+      <div class="col-sm-6">
+        <input formControlName="branch" type="text" class="form-control" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Bank Account Number</label>
+      <div class="col-sm-6">
+        <input formControlName="accountNumber" type="text" class="form-control" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Confirm Bank Account Number</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" placeholder="Email">
+      </div>
+    </div>
+  </div>
+</div>

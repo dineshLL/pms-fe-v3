@@ -1,0 +1,48 @@
+<h5 mat-dialog-title>{{'Dependents information' | uppercase}}</h5>
+<br>
+<div class="col-md-10" [formGroup]="form">
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Marital Status</label>
+    <div class="col-sm-6">
+      <input formControlName="maritalStatus" type="text" class="form-control" placeholder="Marital Status">
+    </div>
+  </div>
+</div>
+<br>
+<div>
+  <table class="table table-sm table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">NAME</th>
+        <th scope="col">GENDER</th>
+        <th scope="col">DATE OF BIRTH</th>
+        <th scope="col">NIC NO</th>
+        <th scope="col">DIFFERENTLY ABLED</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let model of dependents">
+        <td>{{ model.name }}</td>
+        <td>{{ model.name }}</td>
+        <td>{{ model.name }}</td>
+        <td>{{ model.name }}</td>
+        <td>{{ model.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <div fxLayout="row">
+    <div fxFlex>
+      <button mat-raised-button color="primary" (click)="addDependentBtnActionHandler()" >ADD DEPENDENT</button>
+    </div>
+  </div>
+</div>
+<br>
+<div class="col-md-10" [formGroup]="form">
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">W&OP Refund Status</label>
+    <div class="col-sm-6">
+      <input formControlName="wnopRefundStatus" type="text" class="form-control" placeholder="W&OP Refund Status">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<h5 mat-dialog-title>{{'Service information' | uppercase}}</h5>
+<br>
+<div class="col-md-10" [formGroup]="form">
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Officer Belong To</label>
+    <div class="col-sm-7">
+      <input formControlName="officerBelongsTo" type="text" class="form-control" placeholder="Officer Belong To">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Service</label>
+    <div class="col-sm-7">
+      <input formControlName="service" type="text" class="form-control" placeholder="Service">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Grade</label>
+    <div class="col-sm-7">
+      <input formControlName="grade" type="text" class="form-control" placeholder="Grade">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Designation</label>
+    <div class="col-sm-7">
+      <input formControlName="designation" type="text" class="form-control" placeholder="Designation">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Date of First Appointment</label>
+    <div class="col-sm-7">
+      <input formControlName="dateOfFirstAppoinment" type="date" class="form-control" placeholder="Date of First Appointment">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Date Of Permanent Appointment</label>
+    <div class="col-sm-7">
+      <input formControlName="dateOfPermanantAppoinment" type="date" class="form-control" placeholder="Date Of Permanent Appointment">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Confirmed and Pensionable</label>
+
+    <div class="form-check form-check-inline">
+      <input formControlName="confirmedAndPensionable" [value]=true class="form-check-input" type="radio" id="inlineRadio1">
+      <label class="form-check-label" for="inlineRadio1">Yes</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input formControlName="confirmedAndPensionable" [value]=false class="form-check-input" type="radio" id="inlineRadio2">
+      <label class="form-check-label" for="inlineRadio2">No</label>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Section Under which Retirement in Effected</label>
+    <div class="col-sm-7">
+      <input formControlName="sectionUnder" type="text" class="form-control" placeholder="Section Under which Retirement in Effected">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Retirement Reason</label>
+    <div class="col-sm-7">
+      <input formControlName="retirementReason" type="text" class="form-control" placeholder="Retirement Reason">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Date of Retirement</label>
+    <div class="col-sm-7">
+      <input formControlName="dateOfRetirement" type="date" class="form-control" placeholder="Date of Retirement">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Salary Circular &amp; Retirement Year</label>
+    <div class="col-sm-7">
+      <input formControlName="salaryCircular" type="text" class="form-control" placeholder="Salary Circular & Retirement Year">
+    </div>
+  </div>
+</div>

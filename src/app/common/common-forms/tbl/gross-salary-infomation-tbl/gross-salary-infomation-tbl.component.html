@@ -1,0 +1,18 @@
+<div class="table table-sm table-bordered" [formGroup]="form">
+  <thead>
+    <tr>
+      <th colspan="1" style="min-width: 600px">Gross Salary</th>
+      <th>As all the Date of Retirement</th>
+      <th>As at 01/01/2020</th>
+    </tr>
+  </thead>
+  <tr formGroupName="grossSalary">
+    <td>Gross anual Salary applicable to the calculation of pension</td>
+    <td>
+      <input formControlName="current" type="text" class="form-control">
+    </td>
+    <td>
+      <input formControlName="at2020" type="text" class="form-control">
+    </td>
+  </tr>
+</div>
