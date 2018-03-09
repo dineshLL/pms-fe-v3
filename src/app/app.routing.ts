@@ -42,6 +42,10 @@ export const routes: Routes = [
         path: 'gen',
         loadChildren: './views/generalff-pensions/generalff-pensions.module#GeneralffPensionsModule'
       },
+      {
+        path: 'revisions',
+        loadChildren: './views/pension-revisions/pension-revisions.module#PensionRevisionsModule'
+      },
     ]
   },
   {

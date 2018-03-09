@@ -1,0 +1,64 @@
+<h5 mat-dialog-title>{{'General 55 Calculations' | uppercase}}</h5>
+<br>
+<div [formGroup]="form">
+  <div class="col-md-10">
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Deduct from Gratuity?</label>
+      <div class="col-sm-6">
+        <div class="form-check form-check-inline">
+          <input formControlName="deductFromGratuity" [value]=true class="form-check-input" type="radio" >
+          <label class="form-check-label" for="inlineRadio1">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input formControlName="deductFromGratuity" [value]=false class="form-check-input" type="radio">
+          <label class="form-check-label" for="inlineRadio2">No</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Amount or a Percentage?</label>
+      <div class="col-sm-6">
+        <div class="form-check form-check-inline">
+          <input formControlName="amountOrPercentage" [value]=true class="form-check-input" type="radio" >
+          <label class="form-check-label" for="inlineRadio1">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input formControlName="amountOrPercentage" [value]=false class="form-check-input" type="radio">
+          <label class="form-check-label" for="inlineRadio2">No</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Amount/Percentage</label>
+      <div class="col-sm-6">
+        <input formControlName="amountFromGratuity" type="number" class="form-control" placeholder="Amount">
+      </div>
+    </div>
+    <hr>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Reduce from Pension?</label>
+      <div class="col-sm-6">
+        <div class="form-check form-check-inline">
+          <input formControlName="deductFromPension" [value]=true class="form-check-input" type="radio" >
+          <label class="form-check-label" for="inlineRadio1">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input formControlName="deductFromPension" [value]=false class="form-check-input" type="radio">
+          <label class="form-check-label" for="inlineRadio2">No</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Number of Years?</label>
+      <div class="col-sm-6">
+        <input formControlName="numberOfYears" type="number" class="form-control" placeholder="Number of Years">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Amount</label>
+      <div class="col-sm-6">
+        <input formControlName="amountFromPension" type="number" class="form-control" placeholder="Amount">
+      </div>
+    </div>
+  </div>
+</div>

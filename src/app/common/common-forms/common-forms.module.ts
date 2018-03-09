@@ -18,6 +18,8 @@ import { PercentageInfomationTblComponent } from './tbl/percentage-infomation-tb
 import { DeductionsInfomationTblComponent } from './tbl/deductions-infomation-tbl/deductions-infomation-tbl.component';
 import { GratuityInfomationTblComponent } from './tbl/gratuity-infomation-tbl/gratuity-infomation-tbl.component';
 import { MonthlyPensionInfomationTblComponent } from './tbl/monthly-pension-infomation-tbl/monthly-pension-infomation-tbl.component';
+import { GrnffQuestionsComponent } from './grnff-questions/grnff-questions.component';
+import { GrnffCalculationsComponent } from './grnff-calculations/grnff-calculations.component';
 
 let exportedComponents = [
   PersonalInfomationComponent,
@@ -25,7 +27,9 @@ let exportedComponents = [
   DependentsInformationComponent,
   BankInformationComponent,
   PensionableInformationComponent,
-  PaymentInformationComponent
+  PaymentInformationComponent,
+  GrnffCalculationsComponent,
+  GrnffQuestionsComponent
 ];
 
 @NgModule({
@@ -45,7 +49,9 @@ let exportedComponents = [
     PercentageInfomationTblComponent,
     DeductionsInfomationTblComponent,
     GratuityInfomationTblComponent,
-    MonthlyPensionInfomationTblComponent
+    MonthlyPensionInfomationTblComponent,
+    GrnffQuestionsComponent,
+    GrnffCalculationsComponent
   ],
   exports: exportedComponents
 })

@@ -15,7 +15,7 @@ export const navigation = [
   },
   {
     name: "Pension Revisions",
-    url: "/hr/reports",
+    url: "/revisions/dashboard",
     icon: "icon-pie-chart"
   },
   {

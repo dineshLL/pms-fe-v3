@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-page-container',
-  templateUrl: './page-container.component.html',
-  styleUrls: ['./page-container.component.scss']
+  selector: "app-page-container",
+  templateUrl: "./page-container.component.html",
+  styleUrls: ["./page-container.component.scss"]
 })
 export class PageContainerComponent implements OnInit {
-
   navs = [
     {
       link: ["dashboard"],
@@ -19,13 +18,18 @@ export class PageContainerComponent implements OnInit {
       title: "Pensioner Registration"
     },
     {
-      link: ["reports"],
+      link: ["search"],
       code: 3,
+      title: "Search Application"
+    },
+    {
+      link: ["reports"],
+      code: 4,
       title: "Reports"
     }
   ];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.temp = this.navs[0];
@@ -36,3 +40,4 @@ export class PageContainerComponent implements OnInit {
   clicked(object) {
     this.temp = object;
   }
+}

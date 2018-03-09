@@ -31,7 +31,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     // better if lazy loaded
     PensionerTypeSelectorComponent,
     RegistrationFormComponent,
-    RegistrationSuccessfulComponent
+    RegistrationSuccessfulComponent,
   ]
 })
 export class RegularPensionsModule { }

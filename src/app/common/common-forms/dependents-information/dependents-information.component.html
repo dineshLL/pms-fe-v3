@@ -4,7 +4,11 @@
   <div class="form-group row">
     <label class="col-sm-5 col-form-label">Marital Status</label>
     <div class="col-sm-6">
-      <input formControlName="maritalStatus" type="text" class="form-control" placeholder="Marital Status">
+      <select formControlName="maritalStatus" class="form-control form-control-sm" placeholder="Grama Niladhari Division">
+        <option>Married</option>
+        <option>Unmarried</option>
+        <option>Devorced</option>
+      </select>
     </div>
   </div>
 </div>
@@ -33,7 +37,7 @@
   <br>
   <div fxLayout="row">
     <div fxFlex>
-      <button mat-raised-button color="primary" (click)="addDependentBtnActionHandler()" >ADD DEPENDENT</button>
+      <button mat-raised-button color="primary" (click)="addDependentBtnActionHandler()">ADD DEPENDENT</button>
     </div>
   </div>
 </div>

@@ -18,8 +18,13 @@ export class PageContainerComponent implements OnInit {
       title: "Pensioner Registration"
     },
     {
-      link: ["reports"],
+      link: ["search"],
       code: 3,
+      title: "Search Application"
+    },
+    {
+      link: ["reports"],
+      code: 4,
       title: "Reports"
     }
   ];
