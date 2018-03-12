@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationFormContainerComponent implements OnInit {
 
+  isLinear: false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  /**button action handlers */
+  submit() {
+    
+  }
 }

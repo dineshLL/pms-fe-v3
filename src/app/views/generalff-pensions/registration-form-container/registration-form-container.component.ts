@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration-form-container.component.scss']
 })
 export class RegistrationFormContainerComponent implements OnInit {
-
+  isLinear = false;
   @ViewChild(PersonalInfomationComponent) personalInfo: PersonalInfomationComponent;
 
   constructor(

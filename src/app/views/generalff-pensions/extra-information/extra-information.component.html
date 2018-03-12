@@ -1,7 +1,7 @@
 <div class="container-without-topnav">
   <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
 
-    <mat-step [stepControl]="personalInfoForm">
+    <mat-step>
       <ng-template matStepLabel>General 55 Questions</ng-template>
       <common-grnff-questions></common-grnff-questions>
       <div>
@@ -10,7 +10,7 @@
       </div>
     </mat-step>
 
-    <mat-step [stepControl]="personalInfoForm">
+    <mat-step>
       <ng-template matStepLabel>Calculations</ng-template>
       <common-grnff-calculations></common-grnff-calculations>
       <div>

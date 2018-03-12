@@ -1,7 +1,7 @@
 <div class="container-without-topnav">
   <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
 
-    <mat-step [stepControl]="personalInfoForm">
+    <mat-step>
       <ng-template matStepLabel>Personal Information</ng-template>
       <common-personal-infomation></common-personal-infomation>
       <div>
@@ -10,7 +10,7 @@
       </div>
     </mat-step>
 
-    <mat-step [stepControl]="personalInfoForm">
+    <mat-step>
       <ng-template matStepLabel>Service Information</ng-template>
       <common-service-information></common-service-information>
       <div>
@@ -19,7 +19,7 @@
       </div>
     </mat-step>
 
-    <mat-step [stepControl]="personalInfoForm">
+    <mat-step>
       <ng-template matStepLabel>Dependents Information</ng-template>
       <common-dependents-information></common-dependents-information>
       <div>
@@ -28,7 +28,7 @@
       </div>
     </mat-step>
 
-    <mat-step [stepControl]="personalInfoForm">
+    <mat-step>
       <ng-template matStepLabel>Bank Information</ng-template>
       <common-bank-information></common-bank-information>
       <div>
@@ -37,7 +37,7 @@
       </div>
     </mat-step>
 
-    <mat-step [stepControl]="personalInfoForm">
+    <mat-step>
       <ng-template matStepLabel>Pensionable Information</ng-template>
       <common-pensionable-information></common-pensionable-information>
       <div>
@@ -46,7 +46,7 @@
       </div>
     </mat-step>
 
-    <mat-step [stepControl]="personalInfoForm">
+    <mat-step>
       <ng-template matStepLabel>Pensionable Information</ng-template>
       <common-payment-information></common-payment-information>
       <div>
@@ -66,7 +66,7 @@
             <p>INFORMATION </p>
             <mat-card-actions>
               <div fxFlex></div>
-              <button mat-raised-button color="primary" (click)="submitBtnActionHandler()">SUBMIT</button>
+              <button mat-raised-button color="primary" (click)="submit()">SUBMIT</button>
             </mat-card-actions>
           </div>
         </div>

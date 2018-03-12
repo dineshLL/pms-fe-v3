@@ -9,6 +9,9 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./extra-information.component.scss"]
 })
 export class ExtraInformationComponent implements OnInit {
+
+  isLinear: false;
+  
   constructor(private router: Router, private dialog: MatDialog) {}
 
   ngOnInit() {}
