@@ -25,7 +25,7 @@ export const navigation = [
   },
   {
     name: "PD5 Pensions",
-    url: "/hr/reports",
+    url: "/deceased/dashboard",
     icon: "icon-pie-chart"
   },
   {

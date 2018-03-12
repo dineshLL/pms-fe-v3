@@ -16,13 +16,17 @@ export class GrnffQuestionsComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      deductFromPension: ['', Validators.required],
-      numberOfYears: [''],
+      deductFromPension: [false, Validators.required],
+      numberOfYears: [10],
       amountFromPension: [''],
-      deductFromGratuity: ['', Validators.required],
-      amountOrPercentage: [''],
+      deductFromGratuity: [false, Validators.required],
+      amountOrPercentage: ['Amount'],
       amountFromGratuity: ['']
     });
   }
+
+  get deductFromGratuity() { return this.form.get('deductFromGratuity')}
+  get deductFromPension() { return this.form.get('deductFromPension')}
+  get amountOrPercentage() { return this.form.get('amountOrPercentage')}
 
 }

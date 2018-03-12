@@ -12,36 +12,73 @@
     </div>
   </div>
 </div>
-<br>
+<div class="col-md-10" *ngIf="maritalStatus.value === 'Married'">
+  <h5>SPOUSE INFORMATION</h5>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Full Name</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" placeholder="Full Name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Date of Birth</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" placeholder="Date of Birth">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">NIC Number</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" placeholder="NIC Number">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Merriage Certificate Number</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" placeholder="Merriage Certificate Number">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-5 col-form-label">Contact Number</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" placeholder="Contact Number">
+    </div>
+  </div>
+</div>
 <div>
+  <h5>DEPENDENTS INFORMATION</h5>
   <table class="table table-sm table-bordered">
     <thead>
       <tr>
         <th scope="col">NAME</th>
+        <th scope="col">RELATION</th>
         <th scope="col">GENDER</th>
         <th scope="col">DATE OF BIRTH</th>
         <th scope="col">NIC NO</th>
         <th scope="col">DIFFERENTLY ABLED</th>
+        <th scope="col">ACTIONS</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let model of dependents">
         <td>{{ model.name }}</td>
-        <td>{{ model.name }}</td>
-        <td>{{ model.name }}</td>
-        <td>{{ model.name }}</td>
-        <td>{{ model.name }}</td>
+        <td>{{ model.relation }}</td>
+        <td>{{ model.gender }}</td>
+        <td>{{ model.dob }}</td>
+        <td>{{ model.nic }}</td>
+        <td>{{ model.disabled }}</td>
+        <td>
+          <button (click)="remove(model)" type="button" class="btn btn-secondary btn-danger">REMOVE</button>
+        </td>
       </tr>
     </tbody>
   </table>
-  <br>
   <div fxLayout="row">
     <div fxFlex>
-      <button mat-raised-button color="primary" (click)="addDependentBtnActionHandler()">ADD DEPENDENT</button>
+      <button mat-raised-button color="primary" (click)="addDependent()">ADD DEPENDENT</button>
     </div>
   </div>
 </div>
-<br>
 <div class="col-md-10" [formGroup]="form">
   <div class="form-group row">
     <label class="col-sm-5 col-form-label">W&OP Refund Status</label>

@@ -1,3 +1,5 @@
+import { PersonalInfomationComponent } from './../../../common/common-forms/personal-infomation/personal-infomation.component';
+import { ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration-form-container.component.scss']
 })
 export class RegistrationFormContainerComponent implements OnInit {
+
+  @ViewChild(PersonalInfomationComponent) personalInfo: PersonalInfomationComponent;
 
   constructor(
     private router: Router
@@ -18,5 +22,9 @@ export class RegistrationFormContainerComponent implements OnInit {
   /**button action handlers */
   submit() {
     this.router.navigate(['/gen/extra']);
+  }
+
+  removeThis() {
+    const model = this.personalInfo.getModel();
   }
 }

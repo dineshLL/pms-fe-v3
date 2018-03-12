@@ -46,6 +46,10 @@ export const routes: Routes = [
         path: 'revisions',
         loadChildren: './views/pension-revisions/pension-revisions.module#PensionRevisionsModule'
       },
+      {
+        path: 'deceased',
+        loadChildren: './views/deceased-pensions/deceased-pensions.module#DeceasedPensionsModule'
+      }
     ]
   },
   {

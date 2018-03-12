@@ -1,3 +1,4 @@
+import { PersonalInfoModel } from './../../models/form-models/personal-info.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -28,5 +29,9 @@ export class PersonalInfomationComponent implements OnInit {
       ds: ['', Validators.required],
       gn: ['', Validators.required]
     });
+  }
+
+  getModel(): PersonalInfoModel {
+    return this.form.value;
   }
 }

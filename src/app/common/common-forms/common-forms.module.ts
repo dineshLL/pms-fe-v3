@@ -1,3 +1,4 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { SalaryInfomationTblComponent } from './tbl/salary-infomation-tbl/salary-infomation-tbl.component';
 import { AngMatImporterModule } from "./../../ang-mat-importer/ang-mat-importer.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -20,6 +21,9 @@ import { GratuityInfomationTblComponent } from './tbl/gratuity-infomation-tbl/gr
 import { MonthlyPensionInfomationTblComponent } from './tbl/monthly-pension-infomation-tbl/monthly-pension-infomation-tbl.component';
 import { GrnffQuestionsComponent } from './grnff-questions/grnff-questions.component';
 import { GrnffCalculationsComponent } from './grnff-calculations/grnff-calculations.component';
+import { JudicialPreFormDialogComponent } from './dialogs/judicial-pre-form-dialog/judicial-pre-form-dialog.component';
+import { MilitoryPreFormDialogComponent } from './dialogs/militory-pre-form-dialog/militory-pre-form-dialog.component';
+import { AddDependentDialogComponent } from './dialogs/add-dependent-dialog/add-dependent-dialog.component';
 
 let exportedComponents = [
   PersonalInfomationComponent,
@@ -37,7 +41,8 @@ let exportedComponents = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AngMatImporterModule
+    AngMatImporterModule,
+    FlexLayoutModule
   ],
   declarations: [
     GrossSalaryInfomationTblComponent,
@@ -51,8 +56,16 @@ let exportedComponents = [
     GratuityInfomationTblComponent,
     MonthlyPensionInfomationTblComponent,
     GrnffQuestionsComponent,
-    GrnffCalculationsComponent
+    GrnffCalculationsComponent,
+    JudicialPreFormDialogComponent,
+    MilitoryPreFormDialogComponent,
+    AddDependentDialogComponent
   ],
-  exports: exportedComponents
+  exports: exportedComponents,
+  entryComponents: [
+    JudicialPreFormDialogComponent,
+    MilitoryPreFormDialogComponent,
+    AddDependentDialogComponent
+  ]
 })
 export class CommonFormsModule {}
