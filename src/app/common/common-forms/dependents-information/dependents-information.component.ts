@@ -21,15 +21,6 @@ export class DependentsInformationComponent implements OnInit {
       maritalStatus: ['Married', Validators.required],
       wnopRefundStatus: ['', Validators.required]
     });
-
-    this.dependents.push({
-      name: "test name",
-      relation: "son",
-      nic: "12345679V",
-      dob: new Date(),
-      gender: "Male",
-      disabled: false
-    });
   }
 
   get maritalStatus() {
@@ -43,9 +34,8 @@ export class DependentsInformationComponent implements OnInit {
         width: this.DIALOG_WIDTH
       })
       .afterClosed()
-      .subscribe(result => {
-        if (result === true) {
-        }
+      .subscribe(response => {
+        this.dependents.push(response);
       });
   }
 

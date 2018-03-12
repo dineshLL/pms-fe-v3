@@ -47,7 +47,7 @@
 </div>
 <div>
   <h5>DEPENDENTS INFORMATION</h5>
-  <table class="table table-sm table-bordered">
+  <table *ngIf="dependents.length > 0" class="table table-sm table-bordered">
     <thead>
       <tr>
         <th scope="col">NAME</th>

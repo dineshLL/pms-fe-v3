@@ -24,6 +24,8 @@ import { GrnffCalculationsComponent } from './grnff-calculations/grnff-calculati
 import { JudicialPreFormDialogComponent } from './dialogs/judicial-pre-form-dialog/judicial-pre-form-dialog.component';
 import { MilitoryPreFormDialogComponent } from './dialogs/militory-pre-form-dialog/militory-pre-form-dialog.component';
 import { AddDependentDialogComponent } from './dialogs/add-dependent-dialog/add-dependent-dialog.component';
+import { AddAllowanceDialogComponent } from './dialogs/add-allowance-dialog/add-allowance-dialog.component';
+import { AddDeductionDialogComponent } from './dialogs/add-deduction-dialog/add-deduction-dialog.component';
 
 let exportedComponents = [
   PersonalInfomationComponent,
@@ -59,13 +61,17 @@ let exportedComponents = [
     GrnffCalculationsComponent,
     JudicialPreFormDialogComponent,
     MilitoryPreFormDialogComponent,
-    AddDependentDialogComponent
+    AddDependentDialogComponent,
+    AddAllowanceDialogComponent,
+    AddDeductionDialogComponent
   ],
   exports: exportedComponents,
   entryComponents: [
     JudicialPreFormDialogComponent,
     MilitoryPreFormDialogComponent,
-    AddDependentDialogComponent
+    AddDependentDialogComponent,
+    AddAllowanceDialogComponent,
+    AddDeductionDialogComponent
   ]
 })
 export class CommonFormsModule {}

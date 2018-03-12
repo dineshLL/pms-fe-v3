@@ -2,19 +2,19 @@
 <mat-dialog-content class="body-1">
   <section class="mat-typography">
   </section>
-  <div>
+  <div [formGroup]="form">
     <div class="form-group row">
       <label class="col-sm-3 col-form-label col-form-label-sm">Name
       </label>
       <div class="col-sm-9">
-        <input type="text" class="form-control form-control-sm" placeholder="Name of the dependent">
+        <input formControlName="name" type="text" class="form-control form-control-sm" placeholder="Name of the dependent">
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label col-form-label-sm">Relation
       </label>
       <div class="col-sm-9">
-        <select class="form-control form-control-sm" placeholder="Relation">
+        <select  formControlName="relation" class="form-control form-control-sm" placeholder="Relation">
           <option>Son</option>
           <option>Dauguther</option>
         </select>
@@ -24,7 +24,7 @@
       <label class="col-sm-3 col-form-label col-form-label-sm">Gender
       </label>
       <div class="col-sm-9">
-        <select class="form-control form-control-sm" placeholder="Gender">
+        <select formControlName="gender" class="form-control form-control-sm" placeholder="Gender">
           <option>Male</option>
           <option>Female</option>
         </select>
@@ -34,21 +34,21 @@
       <label class="col-sm-3 col-form-label col-form-label-sm">Date of birth
       </label>
       <div class="col-sm-9">
-        <input type="date" class="form-control form-control-sm" placeholder="">
+        <input formControlName="dob" type="date" class="form-control form-control-sm" placeholder="">
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label col-form-label-sm">NIC
       </label>
       <div class="col-sm-9">
-        <input type="text" class="form-control form-control-sm" placeholder="XXXXXXXXXV">
+        <input formControlName="nic" type="text" class="form-control form-control-sm" placeholder="XXXXXXXXXV">
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label col-form-label-sm">Differently abled
       </label>
       <div class="col-sm-9">
-        <select class="form-control form-control-sm" placeholder="Gender">
+        <select  formControlName="disabled" class="form-control form-control-sm" placeholder="Gender">
           <option value="true">Yes</option>
           <option value="false">No</option>
         </select>
@@ -59,7 +59,7 @@
 <mat-dialog-actions>
   <div fxFlex></div>
   <button class="btn btn-secondary btn-danger">CANCEL</button>&nbsp;
-  <button [mat-dialog-close]="true" class="btn btn-primary">
+  <button [mat-dialog-close]=form.value class="btn btn-primary">
     ADD
   </button>
 </mat-dialog-actions>
