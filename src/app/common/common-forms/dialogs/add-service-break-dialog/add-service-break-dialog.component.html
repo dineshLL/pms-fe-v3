@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>{{'Service Information' | uppercase}}</h2>
+<mat-dialog-content class="body-1">
+  <section class="mat-typography">
+  </section>
+  <div [formGroup]="form">
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label col-form-label-sm">From
+      </label>
+      <div class="col-sm-9">
+        <input formControlName="from" type="date" class="form-control form-control-sm" placeholder="From">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label col-form-label-sm">To
+      </label>
+      <div class="col-sm-9">
+        <input formControlName="to" type="date" class="form-control form-control-sm" placeholder="To">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label col-form-label-sm">Reason
+      </label>
+      <div class="col-sm-9">
+        <input formControlName="reason" type="text" class="form-control form-control-sm" placeholder="Reason">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label col-form-label-sm">Payment Status
+      </label>
+      <div class="col-sm-9">
+        <select formControlName="paymentStatus" class="form-control form-control-sm" placeholder="Payment Status">
+          <option>Paid</option>
+          <option>No Pay</option>
+          <option>Half Pay</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div fxFlex></div>
+  <button (click)="close()" class="btn btn-secondary btn-danger">CANCEL</button>&nbsp;
+  <button [disabled]="!form.valid" [mat-dialog-close]=form class="btn btn-primary">
+    ADD
+  </button>
+</mat-dialog-actions>

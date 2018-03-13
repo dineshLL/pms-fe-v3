@@ -1,0 +1,56 @@
+<h2 mat-dialog-title>{{'Service Information' | uppercase}}</h2>
+<mat-dialog-content class="body-1">
+  <section class="mat-typography">
+  </section>
+  <div [formGroup]="form">
+      <div class="form-group row">
+          <label class="col-sm-3 col-form-label col-form-label-sm">Institution
+          </label>
+          <div class="col-sm-9">
+            <input formControlName="institution" type="text" class="form-control form-control-sm" placeholder="Institution">
+          </div>
+        </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label col-form-label-sm">From
+      </label>
+      <div class="col-sm-9">
+        <input formControlName="from" type="date" class="form-control form-control-sm" placeholder="From">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label col-form-label-sm">To
+      </label>
+      <div class="col-sm-9">
+        <input formControlName="to" type="date" class="form-control form-control-sm" placeholder="To">
+      </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-5 col-form-label">25% Pension Recovered</label>
+        <div class="col-sm-6">
+          <div class="form-check form-check-inline">
+            <input formControlName="recovered" [value]=true class="form-check-input" type="radio">
+            <label class="form-check-label" for="inlineRadio1">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input formControlName="recovered" [value]=false class="form-check-input" type="radio">
+            <label class="form-check-label" for="inlineRadio2">No</label>
+          </div>
+        </div>
+      </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label col-form-label-sm">Contribution
+      </label>
+      <div class="col-sm-9">
+        <input formControlName="contribution" type="text" class="form-control form-control-sm" placeholder="Contribution">
+      </div>
+    </div>
+    
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div fxFlex></div>
+  <button (click)="close()" class="btn btn-secondary btn-danger">CANCEL</button>&nbsp;
+  <button [disabled]="!form.valid" [mat-dialog-close]=form class="btn btn-primary">
+    ADD
+  </button>
+</mat-dialog-actions>

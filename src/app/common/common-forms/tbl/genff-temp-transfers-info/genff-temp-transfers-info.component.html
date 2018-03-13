@@ -2,7 +2,7 @@
     <table class="table table-sm table-bordered">
       <thead>
         <tr>
-          <th colspan="1">LOCATION</th>
+          <th colspan="1">INSTITUTION</th>
           <th>FROM</th>
           <th>TO</th>
           <th>25% PENSION RECOVERED</th>
@@ -11,12 +11,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of tblModel">
+        <tr *ngFor="let item of tblModel.rows">
           <td>{{ item.institution}}</td>
           <td>{{ item.from}}</td>
           <td>{{ item.to}}</td>
-          <td>{{ item.pensionRecovered}}</td>
-          <td>{{ item.contributionto}}</td>
+          <td>{{ item.recovered}}</td>
+          <td>{{ item.contribution}}</td>
           <td>
             <button (click)="remove(item)" class="btn btn-danger btn-secondary">Remove</button>
           </td>  

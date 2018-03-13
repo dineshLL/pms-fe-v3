@@ -1,4 +1,9 @@
+import { ServiceBreakInfoTblModel } from './../../../models/table-models/service-break.tbl.model';
+import { routes } from './../../../../app.routing';
+import { AddServiceBreakDialogComponent } from './../../dialogs/add-service-break-dialog/add-service-break-dialog.component';
+import { MatDialog } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'genff-service-break-info',
@@ -7,9 +12,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GenffServiceBreakInfoComponent implements OnInit {
 
-  tblModel: Model[] = [];
+  tblModel: ServiceBreakInfoTblModel;
 
-  constructor() { }
+  constructor(
+    private dialogMgr: MatDialog
+  ) {
+    this.tblModel = {} as ServiceBreakInfoTblModel;
+    this.tblModel.rows = [];
+  }
 
   ngOnInit() {
 
@@ -17,23 +27,20 @@ export class GenffServiceBreakInfoComponent implements OnInit {
 
   /**button action handlers */
   add() {
-    this.tblModel.push({
-      from: new Date().toDateString(),
-      to: new Date().toDateString(),
-      reason: 'test reason',
-      paymentStatus: 'Paid'
-    });
+    this.dialogMgr
+      .open(AddServiceBreakDialogComponent, {
+        width: '600px'
+      })
+      .afterClosed()
+      .subscribe((response: FormGroup) => {
+        if(response.valid) {
+          this.tblModel.rows.push(response.value);
+        }
+      });
   }
 
   remove(item) {
-    this.tblModel.splice(item, 1);
+    this.tblModel.rows.splice(item, 1);
   }
 
-}
-
-interface Model {
-  from: string;
-  to: string;
-  reason: string;
-  paymentStatus: string;
 }

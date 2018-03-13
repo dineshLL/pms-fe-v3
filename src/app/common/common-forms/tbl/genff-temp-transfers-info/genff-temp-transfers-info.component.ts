@@ -1,4 +1,8 @@
+import { TempTransfersTblModel } from './../../../models/table-models/temp-transfers-tbl.model';
+import { FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
+import { AddTempServiceDialogComponent } from '../../dialogs/add-temp-service-dialog/add-temp-service-dialog.component';
 
 @Component({
   selector: 'genff-temp-transfers-info',
@@ -7,27 +11,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GenffTempTransfersInfoComponent implements OnInit {
 
-  tblModel: Model[] = [];
+  tblModel: TempTransfersTblModel = {} as TempTransfersTblModel;
 
-  constructor() { }
+  constructor(
+    private dialogMgr: MatDialog
+  ) {
+    this.tblModel.rows = [];
+  }
 
   ngOnInit() {
 
   }
 
   /**button action handlers */
-  add() {}
+  add() {
+    this.dialogMgr
+      .open(AddTempServiceDialogComponent, {
+        width: '600px'
+      })
+      .afterClosed()
+      .subscribe((response: FormGroup) => {
+        if(response.valid) {
+          this.tblModel.rows.push(response.value);
+        }
+      });
+  }
 
   remove(item) {
-    this.tblModel.splice(item, 1);
+    this.tblModel.rows.splice(item, 1);
   }
 
 }
 
-interface Model {
-  institution: string;
-  from: string;
-  to: string;
-  pensionRecovered: boolean;
-  contribution: number;
-}
