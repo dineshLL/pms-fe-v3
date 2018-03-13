@@ -78,84 +78,84 @@
         <label class="col-sm-5 col-form-label">Are there any service breckages during the pensionable period</label>
         <div class="col-sm-6">
           <div class="form-check form-check-inline">
-            <input [value]=true class="form-check-input" type="radio">
+            <input formControlName="serviceBreaks" [value]=true class="form-check-input" type="radio">
             <label class="form-check-label" for="inlineRadio1">Yes</label>
           </div>
           <div class="form-check form-check-inline">
-            <input [value]=false class="form-check-input" type="radio">
+            <input formControlName="serviceBreaks" [value]=false class="form-check-input" type="radio">
             <label class="form-check-label" for="inlineRadio2">No</label>
           </div>
         </div>
       </div>
-      <genff-service-break-info></genff-service-break-info>
+      <genff-service-break-info *ngIf="serviceBreaks.value"></genff-service-break-info>
       <div class="form-group row">
         <label class="col-sm-5 col-form-label">Has the pensioner obtained for a temporary pension or salary after retirement?</label>
         <div class="col-sm-6">
           <div class="form-check form-check-inline">
-            <input [value]=true class="form-check-input" type="radio">
+            <input formControlName="tempPensionReceived" [value]=true class="form-check-input" type="radio">
             <label class="form-check-label" for="inlineRadio1">Yes</label>
           </div>
           <div class="form-check form-check-inline">
-            <input [value]=false class="form-check-input" type="radio">
+            <input formControlName="tempPensionReceived" [value]=false class="form-check-input" type="radio">
             <label class="form-check-label" for="inlineRadio2">No</label>
           </div>
         </div>
       </div>
-      <div class="form-group row">
+      <div class="form-group row" *ngIf="tempPensionReceived.value">
         <label class="col-sm-5 col-form-label">Obtained location</label>
         <div class="col-sm-6">
-          <input type="date" class="form-control" placeholder="">
+          <input type="text" class="form-control" placeholder="">
         </div>
       </div>
       <div class="form-group row">
         <label class="col-sm-5 col-form-label">Has he obtained pension previously?</label>
         <div class="col-sm-6">
           <div class="form-check form-check-inline">
-            <input [value]=true class="form-check-input" type="radio">
+            <input formControlName="pensionReceived" [value]=true class="form-check-input" type="radio">
             <label class="form-check-label" for="inlineRadio1">Yes</label>
           </div>
           <div class="form-check form-check-inline">
-            <input [value]=false class="form-check-input" type="radio">
+            <input formControlName="pensionReceived" [value]=false class="form-check-input" type="radio">
             <label class="form-check-label" for="inlineRadio2">No</label>
           </div>
         </div>
       </div>
       <div class="form-group row">
-        <label class="col-sm-5 col-form-label">Did the pensioner release to temporary basis for semi-government organizations over the service period?</label>
+        <label class="col-sm-5 col-form-label">Has the the pensioner release to temporary basis for semi-government organizations over the service period?</label>
         <div class="col-sm-6">
           <div class="form-check form-check-inline">
-            <input [value]=true class="form-check-input" type="radio">
+            <input formControlName="releasedForTempService" [value]=true class="form-check-input" type="radio">
             <label class="form-check-label" for="inlineRadio1">Yes</label>
           </div>
           <div class="form-check form-check-inline">
-            <input [value]=false class="form-check-input" type="radio">
+            <input formControlName="releasedForTempService" [value]=false class="form-check-input" type="radio">
             <label class="form-check-label" for="inlineRadio2">No</label>
           </div>
         </div>
       </div>
-      <genff-temp-transfers-info></genff-temp-transfers-info>
+      <genff-temp-transfers-info *ngIf="releasedForTempService.value"></genff-temp-transfers-info>
       <div class="form-group row">
         <label class="col-sm-5 col-form-label">Has pensioner joined with public service provident fund or employee provident fund in his daily service period?</label>
         <div class="col-sm-6">
           <div class="form-check form-check-inline">
-            <input [value]=true class="form-check-input" type="radio">
+            <input formControlName="joinedForFunds" [value]=true class="form-check-input" type="radio">
             <label class="form-check-label" for="inlineRadio1">Yes</label>
           </div>
           <div class="form-check form-check-inline">
-            <input [value]=false class="form-check-input" type="radio">
+            <input formControlName="joinedForFunds" [value]=false class="form-check-input" type="radio">
             <label class="form-check-label" for="inlineRadio2">No</label>
           </div>
         </div>
       </div>
-      <div class="form-group row">
+      <div class="form-group row" *ngIf="joinedForFunds.value">
           <label class="col-sm-5 col-form-label">Does he refund government contribution(12%)?</label>
           <div class="col-sm-6">
             <div class="form-check form-check-inline">
-              <input [value]=true class="form-check-input" type="radio">
+              <input formControlName="contributionRefunded" [value]=true class="form-check-input" type="radio">
               <label class="form-check-label" for="inlineRadio1">Yes</label>
             </div>
             <div class="form-check form-check-inline">
-              <input [value]=false class="form-check-input" type="radio">
+              <input formControlName="contributionRefunded" [value]=false class="form-check-input" type="radio">
               <label class="form-check-label" for="inlineRadio2">No</label>
             </div>
           </div>
