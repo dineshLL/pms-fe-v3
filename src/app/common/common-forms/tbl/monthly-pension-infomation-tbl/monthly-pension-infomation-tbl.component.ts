@@ -19,7 +19,7 @@ export class MonthlyPensionInfomationTblComponent implements OnInit {
         current: ['', Validators.required],
         at2020: ['', Validators.required]
       }),
-      unReduced: this.formBuilder.group({
+      unreduced: this.formBuilder.group({
         current: ['', Validators.required],
         at2020: ['', Validators.required]
       }),

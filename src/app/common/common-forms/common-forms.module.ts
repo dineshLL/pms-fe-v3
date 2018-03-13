@@ -26,6 +26,8 @@ import { MilitoryPreFormDialogComponent } from './dialogs/militory-pre-form-dial
 import { AddDependentDialogComponent } from './dialogs/add-dependent-dialog/add-dependent-dialog.component';
 import { AddAllowanceDialogComponent } from './dialogs/add-allowance-dialog/add-allowance-dialog.component';
 import { AddDeductionDialogComponent } from './dialogs/add-deduction-dialog/add-deduction-dialog.component';
+import { GenffServiceBreakInfoComponent } from './tbl/genff-service-break-info/genff-service-break-info.component';
+import { GenffTempTransfersInfoComponent } from './tbl/genff-temp-transfers-info/genff-temp-transfers-info.component';
 
 let exportedComponents = [
   PersonalInfomationComponent,
@@ -63,7 +65,9 @@ let exportedComponents = [
     MilitoryPreFormDialogComponent,
     AddDependentDialogComponent,
     AddAllowanceDialogComponent,
-    AddDeductionDialogComponent
+    AddDeductionDialogComponent,
+    GenffServiceBreakInfoComponent,
+    GenffTempTransfersInfoComponent
   ],
   exports: exportedComponents,
   entryComponents: [

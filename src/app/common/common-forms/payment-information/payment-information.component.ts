@@ -1,4 +1,4 @@
-import { ViewChild } from "@angular/core";
+import { ViewChild, ChangeDetectorRef } from "@angular/core";
 import { MonthlyPensionInfomationTblComponent } from "./../tbl/monthly-pension-infomation-tbl/monthly-pension-infomation-tbl.component";
 import { GratuityInfomationTblComponent } from "./../tbl/gratuity-infomation-tbl/gratuity-infomation-tbl.component";
 import { PercentageInfomationTblComponent } from "./../tbl/percentage-infomation-tbl/percentage-infomation-tbl.component";
@@ -20,15 +20,20 @@ export class PaymentInformationComponent implements OnInit {
   @ViewChild(MonthlyPensionInfomationTblComponent)
   pensionComponent: MonthlyPensionInfomationTblComponent;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private formBuilder: FormBuilder
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.form = this.formBuilder.group({});
+  }
 
   ngAfterViewInit() {
-    this.form = this.formBuilder.group({
-      percentages: this.percentageComponent.form,
-      gratuity: this.gratuityComponent.form,
-      pension: this.pensionComponent.form
-    });
+    this.form.addControl('percentages', this.percentageComponent.form);
+    this.form.addControl('gratuity', this.gratuityComponent.form);
+    this.form.addControl('pension', this.pensionComponent.form);
+
+    this.cdr.detectChanges();
   }
 }

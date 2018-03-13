@@ -12,14 +12,28 @@ import { Component, OnInit } from "@angular/core";
 export class DependentsInformationComponent implements OnInit {
   DIALOG_WIDTH = "600px";
   form: FormGroup;
+  spouseInfoForm: FormGroup;
   dependents: DependentsInfoTblModel[] = [];
 
   constructor(private dialogMgr: MatDialog, private formBuilder: FormBuilder) {}
 
   ngOnInit() {
+    this.spouseInfoForm = this.formBuilder.group({
+      fullName: ['', Validators.required],
+      dob: ['', Validators.required],
+      nic: ['', Validators.required],
+      merriageCertNumber: ['', Validators.required],
+      contactNumber: ['', Validators.required] 
+    });
     this.form = this.formBuilder.group({
       maritalStatus: ['Married', Validators.required],
-      wnopRefundStatus: ['', Validators.required]
+      wnopRefundStatus: ['', Validators.required],
+      spouse: this.spouseInfoForm
+    });
+
+    this.form.get('maritalStatus').valueChanges.subscribe(value => {
+      if(value === 'Married') this.form.get('spouse').enable();
+      else this.form.get('spouse').disable();
     });
   }
 
