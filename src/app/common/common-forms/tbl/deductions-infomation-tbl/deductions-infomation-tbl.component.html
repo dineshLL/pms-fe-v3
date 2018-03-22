@@ -1,26 +1,24 @@
-<div>
-  <table class="table table-sm table-bordered">
-    <thead>
-      <tr>
-        <th colspan="1" style="min-width: 600px">Pension Deductions (Annual)</th>
-        <th>Present value</th>
-        <th>As at 01/01/2020</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of model.deductions">
-        <td>{{ item.title}}</td>
-        <td>{{ item.amount}}</td>
-        <td>{{ item.amountFor2020}}</td>
-        <td>
-          <button (click)="remove(item)" class="btn btn-danger btn-secondary">Remove</button>
-        </td>  
-      </tr>
-    </tbody>
-  </table>
-  <div fxLayout="row" fxLayoutAlign="end center">
-    <div fxFlex></div>
-    <button (click)="add()" fxFlex="17" class="btn btn-primary">ADD DEDUCTION</button>
-  </div>
+<table class="table table-sm table-bordered">
+  <thead>
+    <tr>
+      <th colspan="1" style="min-width: 600px">Pension Deductions (Annual)</th>
+      <th>Present value</th>
+      <th>As at 01/01/2020</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of model.deductions">
+      <td>{{ item.title}}</td>
+      <td>{{ item.amount}}</td>
+      <td>{{ item.amountFor2020}}</td>
+      <td>
+        <button (click)="remove(item)" class="btn btn-danger btn-secondary">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div fxLayout="row" fxLayoutAlign="end center">
+  <div fxFlex></div>
+  <button (click)="add()" fxFlex="17" class="btn btn-primary">ADD DEDUCTION</button>
 </div>

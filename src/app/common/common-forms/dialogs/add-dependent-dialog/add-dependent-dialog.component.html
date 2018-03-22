@@ -34,7 +34,8 @@
       <label class="col-sm-3 col-form-label col-form-label-sm">Date of birth
       </label>
       <div class="col-sm-9">
-        <input formControlName="dob" type="date" class="form-control form-control-sm" placeholder="">
+          <input ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" formControlName="dob" ngbDatepicker type="text" class="form-control"
+          placeholder="Date of birth">
       </div>
     </div>
     <div class="form-group row">
@@ -58,8 +59,8 @@
 </mat-dialog-content>
 <mat-dialog-actions>
   <div fxFlex></div>
-  <button class="btn btn-secondary btn-danger">CANCEL</button>&nbsp;
-  <button [mat-dialog-close]=form.value class="btn btn-primary">
+  <button (click)="close()" class="btn btn-secondary btn-danger">CANCEL</button>&nbsp;
+  <button [disabled]="!form.valid" [mat-dialog-close]=form class="btn btn-primary">
     ADD
   </button>
 </mat-dialog-actions>

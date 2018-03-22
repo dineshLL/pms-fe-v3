@@ -1,16 +1,16 @@
 <div class="container-without-topnav">
   <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
       <!-- [stepControl]="personalInfoForm" -->
-    <mat-step>
+    <mat-step [stepControl]="personalInfoForm.form">
       <ng-template matStepLabel>Personal Information</ng-template>
       <common-personal-infomation></common-personal-infomation>
       <div>
         <div fxFlex></div>
-        <button (click)="removeThis()" mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext>Next</button>
       </div>
     </mat-step>
 
-    <mat-step>
+    <mat-step [stepControl]="serviceInfoForm.form">
       <ng-template matStepLabel>Service Information</ng-template>
       <common-service-information></common-service-information>
       <div>
@@ -19,7 +19,7 @@
       </div>
     </mat-step>
 
-    <mat-step>
+    <mat-step [stepControl]="dependentInfoForm.form">
       <ng-template matStepLabel>Dependents Information</ng-template>
       <common-dependents-information></common-dependents-information>
       <div>
@@ -28,7 +28,7 @@
       </div>
     </mat-step>
 
-    <mat-step>
+    <mat-step [stepControl]="bankInfoForm.form">
       <ng-template matStepLabel>Bank Information</ng-template>
       <common-bank-information></common-bank-information>
       <div>

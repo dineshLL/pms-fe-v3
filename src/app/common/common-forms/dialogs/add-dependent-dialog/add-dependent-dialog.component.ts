@@ -1,3 +1,4 @@
+import { MatDialogRef } from '@angular/material';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,7 +12,8 @@ export class AddDependentDialogComponent implements OnInit {
   form: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private dialogRef: MatDialogRef<AddDependentDialogComponent>
   ) { }
 
   ngOnInit() {
@@ -23,6 +25,11 @@ export class AddDependentDialogComponent implements OnInit {
       nic: ['', Validators.required],
       disabled: [false, Validators.required]
     });
+  }
+
+  /**button click action handlers */
+  close() {
+    this.dialogRef.close();
   }
 
 }

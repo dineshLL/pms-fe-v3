@@ -8,12 +8,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./personal-infomation.component.scss']
 })
 export class PersonalInfomationComponent implements OnInit {
-
   form: FormGroup;
 
-  constructor(
-    private formBuilder: FormBuilder
-  ) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     // init form
@@ -24,11 +21,15 @@ export class PersonalInfomationComponent implements OnInit {
       dob: ['', Validators.required],
       nic: ['', Validators.required],
       wnopNumber: ['', Validators.required],
-      gender: ['', Validators.required],
+      gender: ['male', Validators.required],
       district: ['', Validators.required],
       ds: ['', Validators.required],
       gn: ['', Validators.required]
     });
+
+    // this.form.valueChanges
+    //   .debounceTime(1000)
+    //   .subscribe(newValue => (this.firstName = newValue));
   }
 
   getModel(): PersonalInfoModel {

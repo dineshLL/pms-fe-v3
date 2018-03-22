@@ -1,3 +1,4 @@
+import { MatDialogRef } from '@angular/material';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,9 @@ export class AddDeductionDialogComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private dialogRef: MatDialogRef<AddDeductionDialogComponent>,
+    private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -20,5 +23,10 @@ export class AddDeductionDialogComponent implements OnInit {
       amount: [0.00, Validators.required],
       amountFor2020: [0.00, Validators.required],
     });
+  }
+
+  /**button click handlders */
+  close() {
+    this.dialogRef.close();
   }
 }

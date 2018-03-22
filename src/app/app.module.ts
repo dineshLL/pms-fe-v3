@@ -1,3 +1,4 @@
+import { NgbDateNativeAdapter } from './adapters/ngb-date-native-adapter';
 import { AuthService } from './services/auth.service';
 import { AngMatImporterModule } from './ang-mat-importer/ang-mat-importer.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -5,9 +6,7 @@ import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 
 // Import containers
 import {
@@ -74,6 +73,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { MatProgressSpinnerModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -82,6 +82,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
+    NgbModule.forRoot(),
     ChartsModule,
     BrowserAnimationsModule,
     AngMatImporterModule
@@ -96,6 +97,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   },
+  {provide: NgbDateAdapter, useClass: NgbDateNativeAdapter},
   AuthService
 ],
   bootstrap: [ AppComponent ]

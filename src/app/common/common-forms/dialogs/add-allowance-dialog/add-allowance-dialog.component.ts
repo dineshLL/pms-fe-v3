@@ -1,3 +1,4 @@
+import { MatDialogRef } from '@angular/material';
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
@@ -9,14 +10,21 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 export class AddAllowanceDialogComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private dialogRef: MatDialogRef<AddAllowanceDialogComponent>,
+    private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({
       code: [1, Validators.required],
       title: ['', Validators.required],
-      amount: [0.00, Validators.required],
-      amountFor2020: [0.00, Validators.required],
+      amount: [, Validators.required],
+      amountFor2020: [, Validators.required],
     });
+  }
+
+  /**button action handlers */
+  close() {
+    this.dialogRef.close();
   }
 }

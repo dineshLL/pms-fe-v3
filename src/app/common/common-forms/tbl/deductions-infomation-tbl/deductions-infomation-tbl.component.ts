@@ -1,3 +1,4 @@
+import { FormGroup } from '@angular/forms';
 import { AddDeductionDialogComponent } from './../../dialogs/add-deduction-dialog/add-deduction-dialog.component';
 import { MatDialog } from '@angular/material';
 import { DeductionsTableModel } from './../../../models/table-models/deductions-info.tbl.model';
@@ -32,8 +33,9 @@ export class DeductionsInfomationTblComponent implements OnInit {
         width: '600px'
       })
       .afterClosed()
-      .subscribe(response => {
-        this.model.deductions.push(response);
+      .subscribe((response: FormGroup) => {
+        if(response.valid)
+        this.model.deductions.push(response.value);
       });
   }
 

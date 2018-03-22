@@ -28,7 +28,8 @@ export class GrnffQuestionsComponent implements OnInit {
       pensionReceived: [false, Validators.required],
       releasedForTempService: [false, Validators.required],
       joinedForFunds: [false, Validators.required],
-      contributionRefunded: [false]
+      contributionRefunded: [false],
+      hasDailyServicePeriod: [false]
     });
   }
 
@@ -39,5 +40,6 @@ export class GrnffQuestionsComponent implements OnInit {
   get tempPensionReceived() { return this.form.get('tempPensionReceived') }
   get releasedForTempService() { return this.form.get('releasedForTempService') }
   get joinedForFunds() { return this.form.get('joinedForFunds') }
+  get hasDailyServicePeriod() { return this.form.get('hasDailyServicePeriod') };
 
 }

@@ -1,16 +1,16 @@
-import { AddDependentDialogComponent } from "./../dialogs/add-dependent-dialog/add-dependent-dialog.component";
-import { MatDialog } from "@angular/material";
-import { DependentsInfoTblModel } from "./../../models/table-models/dependents-info.tbl.model";
-import { Validators, FormGroup, FormBuilder } from "@angular/forms";
-import { Component, OnInit } from "@angular/core";
+import { AddDependentDialogComponent } from './../dialogs/add-dependent-dialog/add-dependent-dialog.component';
+import { MatDialog } from '@angular/material';
+import { DependentsInfoTblModel } from './../../models/table-models/dependents-info.tbl.model';
+import { Validators, FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "common-dependents-information",
-  templateUrl: "./dependents-information.component.html",
-  styleUrls: ["./dependents-information.component.scss"]
+  selector: 'common-dependents-information',
+  templateUrl: './dependents-information.component.html',
+  styleUrls: ['./dependents-information.component.scss']
 })
 export class DependentsInformationComponent implements OnInit {
-  DIALOG_WIDTH = "600px";
+  DIALOG_WIDTH = '600px';
   form: FormGroup;
   spouseInfoForm: FormGroup;
   dependents: DependentsInfoTblModel[] = [];
@@ -23,23 +23,27 @@ export class DependentsInformationComponent implements OnInit {
       dob: ['', Validators.required],
       nic: ['', Validators.required],
       merriageCertNumber: ['', Validators.required],
-      contactNumber: ['', Validators.required] 
+      contactNumber: ['', Validators.required]
     });
     this.form = this.formBuilder.group({
-      maritalStatus: ['Married', Validators.required],
+      maritalStatus: ['Unmarried', Validators.required],
       wnopRefundStatus: ['', Validators.required],
       spouse: this.spouseInfoForm
     });
 
     this.form.get('maritalStatus').valueChanges.subscribe(value => {
-      if(value === 'Married') this.form.get('spouse').enable();
+      if (value === 'Married') this.form.get('spouse').enable();
       else this.form.get('spouse').disable();
     });
+
+    this.form.get('wnopRefundStatus').valueChanges.subscribe(value => {
+      if(value) this.form.get('refundAmount').enable();
+      else this.form.get('refundAmount').disable();
+    })
   }
 
-  get maritalStatus() {
-    return this.form.get("maritalStatus");
-  }
+  get maritalStatus() { return this.form.get('maritalStatus');}
+  get wnopRefundStatus() { return this.form.get('wnopRefundStatus') }
 
   /**button action handlers */
   addDependent() {
@@ -49,7 +53,9 @@ export class DependentsInformationComponent implements OnInit {
       })
       .afterClosed()
       .subscribe(response => {
-        this.dependents.push(response);
+        if (response.valid) {
+          this.dependents.push(response.value);
+        }
       });
   }
 

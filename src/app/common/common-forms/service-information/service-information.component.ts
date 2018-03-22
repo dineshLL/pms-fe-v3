@@ -14,17 +14,18 @@ export class ServiceInformationComponent implements OnInit {
   ngOnInit() {
     // initForm
     this.form = this.formBuilder.group({
-      officerBelongsTo: ["", Validators.required],
-      service: ["", Validators.required],
-      grade: ["", Validators.required],
-      designation: ["", Validators.required],
-      dateOfFirstAppoinment: ["", Validators.required],
-      dateOfPermanantAppoinment: ["", Validators.required],
-      confirmedAndPensionable: ["", Validators.required],
-      sectionUnder: ["", Validators.required],
-      retirementReason: ["", Validators.required],
-      dateOfRetirement: ["", Validators.required],
-      salaryCircular: ["", Validators.required]
+      officerBelongsTo: ['', Validators.required],
+      service: ['', Validators.required],
+      grade: ['', Validators.required],
+      designation: ['', Validators.required],
+      dateOfFirstAppoinment: ['', Validators.required],
+      dateOfPermanantAppoinment: ['', Validators.required],
+      confirmedAndPensionable: [true, Validators.required],
+      sectionUnder: ['', Validators.required],
+      retirementReason: ['', Validators.required],
+      dateOfRetirement: ['', Validators.required],
+      salaryCircular: ['', Validators.required],
+      confirmedPost: [true, Validators.required]
     });
   }
 }
