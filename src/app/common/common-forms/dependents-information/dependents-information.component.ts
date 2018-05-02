@@ -23,7 +23,9 @@ export class DependentsInformationComponent implements OnInit {
       dob: ['', Validators.required],
       nic: ['', Validators.required],
       merriageCertNumber: ['', Validators.required],
-      contactNumber: ['', Validators.required]
+      contactNumber: ['', Validators.required],
+      birthCertNumber:['',Validators.required]
+
     });
     this.form = this.formBuilder.group({
       maritalStatus: ['Unmarried', Validators.required],
@@ -40,6 +42,7 @@ export class DependentsInformationComponent implements OnInit {
       if(value) this.form.get('refundAmount').enable();
       else this.form.get('refundAmount').disable();
     })
+    this.form.valueChanges.subscribe(console.log);
   }
 
   get maritalStatus() { return this.form.get('maritalStatus');}

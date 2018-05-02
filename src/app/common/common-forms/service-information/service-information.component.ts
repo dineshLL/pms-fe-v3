@@ -16,6 +16,7 @@ export class ServiceInformationComponent implements OnInit {
     this.form = this.formBuilder.group({
       officerBelongsTo: ['', Validators.required],
       service: ['', Validators.required],
+      salaryCode:['',Validators.required],
       grade: ['', Validators.required],
       designation: ['', Validators.required],
       dateOfFirstAppoinment: ['', Validators.required],
@@ -27,5 +28,9 @@ export class ServiceInformationComponent implements OnInit {
       salaryCircular: ['', Validators.required],
       confirmedPost: [true, Validators.required]
     });
+
+    this.form.valueChanges.subscribe(console.log);
   }
+
+  
 }

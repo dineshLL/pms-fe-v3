@@ -24,6 +24,11 @@ export const navigation = [
     icon: "icon-pie-chart"
   },
   {
+    name: "W&OP Re-registration",
+    url: "/re-registration/dashboard",
+    icon: "icon-pie-chart"
+  },
+  {
     name: "PD5 Pensions",
     url: "/deceased/dashboard",
     icon: "icon-pie-chart"

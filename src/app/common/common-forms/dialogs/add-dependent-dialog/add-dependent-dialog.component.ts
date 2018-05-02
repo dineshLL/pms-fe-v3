@@ -25,6 +25,7 @@ export class AddDependentDialogComponent implements OnInit {
       nic: ['', Validators.required],
       disabled: [false, Validators.required]
     });
+    this.form.valueChanges.subscribe(console.log);
   }
 
   /**button click action handlers */

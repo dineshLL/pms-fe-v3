@@ -74,6 +74,10 @@ import { MatProgressSpinnerModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
+import { ConstantStore } from './services/constants.store';
+import { MasterdataService } from './services/masterdata.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SnackAlertService } from './notifications/snack-alert.service';
 
 @NgModule({
   imports: [
@@ -85,7 +89,8 @@ import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
     NgbModule.forRoot(),
     ChartsModule,
     BrowserAnimationsModule,
-    AngMatImporterModule
+    AngMatImporterModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -98,7 +103,10 @@ import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
     useClass: HashLocationStrategy
   },
   {provide: NgbDateAdapter, useClass: NgbDateNativeAdapter},
-  AuthService
+  AuthService,
+  ConstantStore,
+  MasterdataService,
+  SnackAlertService
 ],
   bootstrap: [ AppComponent ]
 })

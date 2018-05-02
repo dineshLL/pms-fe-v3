@@ -31,6 +31,7 @@ import { GenffTempTransfersInfoComponent } from "./tbl/genff-temp-transfers-info
 import { AddServiceBreakDialogComponent } from "./dialogs/add-service-break-dialog/add-service-break-dialog.component";
 import { AddTempServiceDialogComponent } from "./dialogs/add-temp-service-dialog/add-temp-service-dialog.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+// import { WopReregServiceInformationComponent } from "./wop-rereg-service-information/wop-rereg-service-information.component";
 
 let exportedComponents = [
   PersonalInfomationComponent,
@@ -40,7 +41,8 @@ let exportedComponents = [
   PensionableInformationComponent,
   PaymentInformationComponent,
   GrnffCalculationsComponent,
-  GrnffQuestionsComponent
+  GrnffQuestionsComponent,
+  // WopReregServiceInformationComponent
 ];
 
 @NgModule({
@@ -50,7 +52,7 @@ let exportedComponents = [
     ReactiveFormsModule,
     AngMatImporterModule,
     FlexLayoutModule,
-    NgbModule
+    NgbModule,
   ],
   declarations: [
     GrossSalaryInfomationTblComponent,

@@ -1,6 +1,8 @@
 import { PersonalInfoModel } from './../../models/form-models/personal-info.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MasterdataService } from '../../../services/masterdata.service';
+import { SnackAlertService } from '../../../notifications/snack-alert.service';
 
 @Component({
   selector: 'common-personal-infomation',
@@ -10,7 +12,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class PersonalInfomationComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private masterDataService: MasterdataService,
+    private snackAlert: SnackAlertService
+  ) {}
 
   ngOnInit() {
     // init form
@@ -27,12 +33,22 @@ export class PersonalInfomationComponent implements OnInit {
       gn: ['', Validators.required]
     });
 
-    // this.form.valueChanges
-    //   .debounceTime(1000)
-    //   .subscribe(newValue => (this.firstName = newValue));
+    this.initChangeHooks();
   }
 
   getModel(): PersonalInfoModel {
+    if(this.form.valid)
     return this.form.value;
+  }
+
+  /**
+   * initilizing the change hoooks for the fields
+   */
+  initChangeHooks() {
+
+    //for ds change
+    this.form.get('district').valueChanges.subscribe(value => {
+      this.snackAlert.show('this is the alwert');
+    });
   }
 }
