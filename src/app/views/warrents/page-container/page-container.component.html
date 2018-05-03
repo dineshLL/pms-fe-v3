@@ -1,0 +1,18 @@
+<div>
+  <div class="page-title-container">
+    <div class="large-font">Rail Warrents</div>
+    <div class="small-font">Management</div>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex="20">
+      <div class="internal-sidenav">
+        <ul class="list-group list-group-flush" *ngFor="let nav of navs; let i = index;">
+          <li [routerLink]=nav.link class="list-group-item" [ngClass]="{ 'active': temp.code == nav.code }" (click)="clicked(nav)">{{ nav.title }}</li>
+        </ul>
+      </div>
+    </div>
+    <div fxFlex class="main-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

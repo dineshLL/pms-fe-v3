@@ -1,0 +1,25 @@
+<div class="container-without-topnav" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxFlex fxLayoutAlign="space-evenly center">
+      <mat-card class="card white-text" style="background-color: rgb(29, 135, 221)">
+        <mat-card-header>
+          <mat-card-title>SEARCH PENSIONERS</mat-card-title>
+          
+        </mat-card-header>
+        <img mat-card-image src="http://pension-app.projects.swizsoft.com/assets/images/civil.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <div  class="form-group col-md-12">
+                <label for="pensionNumber">Pension Number</label>
+                <input  class="form-control"  placeholder="Pension Number" type="text">
+              </div>
+              <div  class="form-group col-md-12">
+                  <label for="pensionNumber">NIC Number</label>
+                  <input  class="form-control"  placeholder="NIC Number" type="text">
+                </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <div fxFlex></div>
+          <button mat-button (click)="searchPensioner()">Search</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+</div>

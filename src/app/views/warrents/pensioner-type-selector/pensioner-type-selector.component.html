@@ -1,0 +1,150 @@
+<div class="container-without-topnav" fxLayout="row" fxLayoutAlign="space-between center">
+  <!-- civil -->
+  <div  fxFlex fxLayoutAlign="space-evenly center">
+    <mat-card class="card white-text" style="background-color: #049A4F">
+      <mat-card-header>
+        <mat-card-title>CIVIL PENSIONERS</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image src="http://pension-app.projects.swizsoft.com/assets/images/civil.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Ordinary citizens distinct from military
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxFlex></div>
+        <button mat-button (click)="handleTiteClick(CIVIL)">NEXT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- JUD -->
+  <div *ngIf="config.showJudicial" fxFlex fxLayoutAlign="space-evenly center" >
+    <mat-card class="card white-text" style="background-color: #2B8294">
+      <mat-card-header>
+
+        <mat-card-title> {{ 'Judicial Pensioners' | uppercase }}</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image src="http://pension-app.projects.swizsoft.com/assets/images/judicial.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Ordinary citizens distinct from military
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxFlex></div>
+        <button mat-button (click)="handleTiteClick(JUDICIAL)">NEXT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- non JUD -->
+
+  <div *ngIf="config.showNonJudicial" fxFlex fxLayoutAlign="space-evenly center">
+    <mat-card class="card white-text" style="background-color: #A65C5C">
+      <mat-card-header>
+
+        <mat-card-title> {{ 'Non-Judicial Pensioners' | uppercase }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="http://pension-app.projects.swizsoft.com/assets/images/non-judicial.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Some description needs to be provided
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxFlex></div>
+        <button mat-button (click)="handleTiteClick(NON_JUDICIAL)">NEXT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- Militory -->
+  <div *ngIf="config.showMilitory" fxFlex fxLayoutAlign="space-evenly center">
+    <mat-card class="card white-text" style="background-color:#6C4977 ">
+      <mat-card-header>
+
+        <mat-card-title>{{'Militory Pensioners' | uppercase }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="http://pension-app.projects.swizsoft.com/assets/images/military.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Not involved in court ruling or judgment
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxFlex></div>
+        <button mat-button (click)="handleTiteClick(MILITORY)">NEXT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- army -->
+  <div *ngIf="config.showArmy" fxFlex fxLayoutAlign="space-evenly center">
+    <mat-card class="card white-text" style="background-color: #2F7287">
+      <mat-card-header>
+
+        <mat-card-title>{{'Army Pensioners' | uppercase }}</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image src="http://pension-app.projects.swizsoft.com/assets/images/army.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Military Force equipped for Fighting on Land
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxFlex></div>
+        <button mat-button (click)="handleTiteClick(ARMY)">NEXT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+
+  <!-- navy -->
+  <div *ngIf="config.showNavy" fxFlex fxLayoutAlign="space-evenly center">
+    <mat-card class="card white-text" style="background-color: #295498">
+      <mat-card-header>
+
+        <mat-card-title>Navy Pensioners</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image src="http://pension-app.projects.swizsoft.com/assets/images/navy.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Armed services which conducts Military Operations at Sea
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxFlex></div>
+        <button mat-button (click)="handleTiteClick(ARMY)">NEXT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- air force -->
+  <div *ngIf="config.showAirForce" fxFlex fxLayoutAlign="space-evenly center">
+    <mat-card class="card white-text" style="background-color: #C57D31">
+      <mat-card-header>
+
+        <mat-card-title>Air Force Pensioners</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image src="http://pension-app.projects.swizsoft.com/assets/images/airforce.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Armed Forces concerned with Fighting or Defence in the Air.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxFlex></div>
+        <button mat-button (click)="handleTiteClick(ARMY)">NEXT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- <button mat-button (click)="reverseActionHandler()">BACK</button> -->
+
+</div>

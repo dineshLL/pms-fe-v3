@@ -49,6 +49,10 @@ export const routes: Routes = [
       {
         path: 'deceased',
         loadChildren: './views/deceased-pensions/deceased-pensions.module#DeceasedPensionsModule'
+      },
+      {
+        path: 'warrents',
+        loadChildren: './views/warrents/warrent.module#WarrentsModule'
       }
     ]
   },
