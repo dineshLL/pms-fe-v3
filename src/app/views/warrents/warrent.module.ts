@@ -23,6 +23,8 @@ import { AddWarrentDetailComponent } from './registration-form-container/add-war
 import { AddDependentsComponent } from './registration-form-container/add-dependents/add-dependents.component';
 import { SearchWarrentComponent } from './search-warrent/search-warrent.component';
 import { WarrentListComponent } from './warrent-list/warrent-list.component';
+import { UpdateWarrentComponent } from './update-warrent/update-warrent.component';
+import { PensionerDetailComponent } from './pensioner-detail/pensioner-detail.component';
 
 
 @NgModule({
@@ -51,6 +53,8 @@ import { WarrentListComponent } from './warrent-list/warrent-list.component';
     AddDependentsComponent,     
     SearchWarrentComponent,
     WarrentListComponent,
+    UpdateWarrentComponent,
+    PensionerDetailComponent,
 
     // better if lazy loaded
     PensionerTypeSelectorComponent,

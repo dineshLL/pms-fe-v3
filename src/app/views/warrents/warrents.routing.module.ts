@@ -10,6 +10,7 @@ import { SearchForRegistrationComponent } from './registration-form-container/se
 import { PensionerListComponent } from './registration-form-container/pensioner-list/pensioner-list.component';
 import { SearchWarrentComponent } from './search-warrent/search-warrent.component';
 import { WarrentListComponent } from './warrent-list/warrent-list.component';
+import { UpdateWarrentComponent } from './update-warrent/update-warrent.component';
 
 const routes: Routes = [
   {
@@ -78,6 +79,13 @@ const routes: Routes = [
       {
         path: "pensionerlist",
         component: PensionerListComponent,
+        data: {
+          title: "Pensioner List"
+        }
+      },          
+      {
+        path: "updatewarrent",
+        component: UpdateWarrentComponent,
         data: {
           title: "Update Warrant"
         }

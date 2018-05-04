@@ -1,36 +1,36 @@
 <div fxLayout="row">
-    <div class="page-inline-menu" fxLayout="row" fxLayoutAdivgn="start center">
-      <div>
-        <h5>DASHBOARD (RAIL WARRENT)</h5>
-      </div>
+  <div class="page-inline-menu" fxLayout="row" fxLayoutAdivgn="start center">
+    <div>
+      <h5>DASHBOARD (RAIL WARRENT)</h5>
     </div>
   </div>
-  <div class="container">
-    <div fxLayout="column">
-      <div fxFlex class="title-container ">
-        <div>Overview</div>
-      </div>
-      <div fxFlex class="sub-tile-container">
-        <div fxLayout="row" fxLayoutWrap>
-          <div [routerLink]="['/warrents/registration']" class="sub-tile" style="width: 175px; height: 85px; margin: 2.5px">
-            <div>
-              <h3 class="sub-tile-header">Update profile</h3>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="start center">
-              <div fxFlex="30" class="sub-tile-count"></div>
-              <div fxFlex class="sub-tile-title"></div>
-            </div>
+</div>
+<div class="container">
+  <div fxLayout="column">
+    <div fxFlex class="title-container ">
+      <div>Overview</div>
+    </div>
+    <div fxFlex class="sub-tile-container">
+      <div fxLayout="row" fxLayoutWrap>
+        <div [routerLink]="['/warrents/registration']" class="sub-tile" style="width: 175px; height: 85px; margin: 2.5px">
+          <div>
+            <h3 class="sub-tile-header">Update profile</h3>
           </div>
-          <div [routerLink]="['/warrents/searchwarrent']" class="sub-tile" style="width: 175px; height: 85px; margin: 2.5px">
-            <div>
-              <h3 class="sub-tile-header">Pending Warrents</h3>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="start center">
-              <div fxFlex="30" class="sub-tile-count"></div>
-              <div fxFlex class="sub-tile-title"></div>
-            </div>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxFlex="30" class="sub-tile-count"></div>
+            <div fxFlex class="sub-tile-title"></div>
+          </div>
+        </div>
+        <div [routerLink]="['/warrents/searchwarrent']" class="sub-tile" style="width: 175px; height: 85px; margin: 2.5px">
+          <div>
+            <h3 class="sub-tile-header">Pending Warrents</h3>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxFlex="30" class="sub-tile-count"></div>
+            <div fxFlex class="sub-tile-title"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

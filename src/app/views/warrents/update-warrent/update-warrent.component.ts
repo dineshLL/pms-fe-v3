@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
 
 @Component({
-  selector: 'app-warrent-booking',
-  templateUrl: './warrent-booking.component.html',
-  styleUrls: ['./warrent-booking.component.scss']
+  selector: 'app-update-warrent',
+  templateUrl: './update-warrent.component.html',
+  styleUrls: ['./update-warrent.component.scss']
 })
-export class WarrentBookingComponent implements OnInit {
+export class UpdateWarrentComponent implements OnInit {
   form: FormGroup;
   
   constructor(private formBuilder: FormBuilder) { }

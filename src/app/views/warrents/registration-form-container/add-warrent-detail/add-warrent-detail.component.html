@@ -1,43 +1,44 @@
 <h5 mat-dialog-title>{{'Warrent Details' | uppercase}}</h5>
 <br>
-<div class="col-md-12" [formGroup]="form"> 
+<div class="col-md-12" [formGroup]="form">
 
-    <div class="form-group row">
-        <label class="col-sm-5 col-form-label">Warrent Type</label>
-        <div class="col-sm-7">
-          <select formControlName="warrentType" class="form-control form-control-sm" placeholder="Warrent Type">
-            <option>1st Class </option>
-            <option>2nd Class</option> 
-            <option>3nd Class</option> 
-          </select>
-        </div>
-    </div> 
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label">Warrent Type</label>
+    <div class="col-sm-3  ">
+      <select formControlName="warrentType" class="form-control form-control-sm" placeholder="Warrent Type">
+        <option>1st Class </option>
+        <option>2nd Class</option>
+        <option>3nd Class</option>
+      </select>
+    </div>
+  </div>
 
-    <h4>Dependents</h4> 
-    <div fxLayout="row">
-        <div fxFlex="100">
-          <table class="table table-sm table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">NAME</th>
-                <th scope="col">RELATION</th>
-                <th scope="col">DATE OF BIRTH</th>
-                <th scope="col">NIC NUMBER</th> 
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Test Name</td>
-                <td>Son</td>
-                <td>2002-04-10</td>
-                <td>No</td> 
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>   
-      <input type="button" (click)="addDependent()" value="Add" style="float: left;">
-      <br>
+  <h4>Dependents</h4>
+  <div fxLayout="row">
+    <div fxFlex="100">
+      <table class="table table-sm table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">RELATION</th>
+            <th scope="col">DATE OF BIRTH</th>
+            <th scope="col">NIC NUMBER</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Test Name</td>
+            <td>Son</td>
+            <td>2002-04-10</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button mat-button (click)="addDependent()" style="float:left">Add</button>
+  <!-- <input type="button" (click)="addDependent()" value="Add" style="float: left;"> -->
+  <br>
 </div>

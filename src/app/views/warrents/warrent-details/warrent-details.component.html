@@ -1,64 +1,64 @@
 <h5 mat-dialog-title>{{'Warrent Details' | uppercase}}</h5>
 <br>
-<div class="col-md-12" [formGroup]="form">
-    <div class="form-group row">
-        <label class="col-sm-5 col-form-label">NIC Number</label>
-        <div class="col-sm-7">
-          <input formControlName="nicNumber" type="text" class="form-control" placeholder="NIC Number">
-        </div>
+<div class="col-md-10" [formGroup]="form">
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">NIC Number</label>
+    <div class="col-sm-8">
+      <input formControlName="nicNumber" type="text" class="form-control" placeholder="NIC Number">
     </div>
-    <div class="form-group row">
-        <label class="col-sm-5 col-form-label">Pension Number</label>
-        <div class="col-sm-7">
-          <input formControlName="pensionNumber" type="text" class="form-control" placeholder="Pension Number">
-        </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Pension Number</label>
+    <div class="col-sm-8">
+      <input formControlName="pensionNumber" type="number" class="form-control" placeholder="Pension Number">
     </div>
-    <div class="form-group row">
-        <label class="col-sm-5 col-form-label">Address</label>
-        <div class="col-sm-7">
-          <input formControlName="address" type="text" class="form-control" placeholder="Address">
-        </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Address</label>
+    <div class="col-sm-8">
+      <input formControlName="address" type="text" class="form-control" placeholder="Address">
     </div>
-    <div class="form-group row">
-        <label class="col-sm-5 col-form-label">Warrent Class</label>
-        <div class="col-sm-7">
-          <select formControlName="warrentClass" class="form-control form-control-sm" placeholder="Warrent Class">
-            <option>1st Class </option>
-            <option>2nd Class</option> 
-            <option>3nd Class</option> 
-          </select>
-        </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Warrent Class</label>
+    <div class="col-sm-4">
+      <select formControlName="warrentClass" class="form-control form-control-sm" placeholder="Warrent Class">
+        <option>1st Class </option>
+        <option>2nd Class</option>
+        <option>3nd Class</option>
+      </select>
     </div>
-    <div class="form-group row">
-        <label class="col-sm-5 col-form-label">Remaining Warrent</label>
-        <div class="col-sm-7">
-          <input formControlName="remainingWarrent" type="number" class="form-control" placeholder="Remaining warrent">
-        </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Remaining Warrent</label>
+    <div class="col-sm-4">
+      <input formControlName="remainingWarrent" type="number" class="form-control" placeholder="Remaining warrent">
     </div>
-    <br>
-    <h4>Dependents</h4> 
-    <div fxLayout="row">
-        <div fxFlex="100">
-          <table class="table table-sm table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">NAME</th>
-                <th scope="col">RELATION</th>
-                <th scope="col">DATE OF BIRTH</th>
-                <th scope="col">NIC NUMBER</th> 
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Test Name</td>
-                <td>Son</td>
-                <td>2002-04-10</td>
-                <td>No</td> 
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>   
+  </div>
+</div>
+<br>
+<h4>Dependents</h4>
+<div fxLayout="row">
+  <div fxFlex="100">
+    <table class="table table-sm table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">NAME</th>
+          <th scope="col">RELATION</th>
+          <th scope="col">DATE OF BIRTH</th>
+          <th scope="col">NIC NUMBER</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Test Name</td>
+          <td>Son</td>
+          <td>2002-04-10</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

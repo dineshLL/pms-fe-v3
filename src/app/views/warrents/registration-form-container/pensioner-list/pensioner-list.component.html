@@ -1,34 +1,36 @@
 <br>
 <div class="col-md-12">
-    <h4>Pensioner List</h4> 
-    <div fxLayout="row">
-        <div fxFlex="100">
-          <table class="table table-sm table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Pension Number</th>
-                <th scope="col">NIC</th> 
-                <th scope="col">Name</th> 
-                <th scope="col">District</th> 
-                <th scope="col">DS Office</th> 
-                <th scope="col">Address</th> 
-                <th scope="col">Option</th> 
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>123456789</td>
-                <td>482565214V</td>
-                <td>Test Name</td>
-                <td>Test District</td> 
-                <td>Test DS Office</td>
-                <td>Test Address</td>   
-                <td><input type="button" (click)="gotoPensionerDetails()" value="Edit"></td> 
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>   
+  <h4>Search Results</h4>
+  <div fxLayout="row">
+    <div fxFlex="100">
+      <table class="table table-sm table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Pension Number</th>
+            <th scope="col">NIC</th>
+            <th scope="col">Name</th>
+            <th scope="col">District</th>
+            <th scope="col">DS Office</th>
+            <th scope="col">Address</th>
+            <th scope="col">Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>123456789</td>
+            <td>482565214V</td>
+            <td>Test Name</td>
+            <td>Test District</td>
+            <td>Test DS Office</td>
+            <td>Test Address</td>
+            <td>
+              <button mat-button (click)="gotoPensionerDetails()" mat-raised-button color="primary">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
+</div>

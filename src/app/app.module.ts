@@ -72,8 +72,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { MatProgressSpinnerModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap'; 
-
+import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 // import { DashboardComponent } from './views/warrents/dashboard/dashboard.component';
 // import { DashboardComponent } from './';
 
@@ -93,7 +92,7 @@ import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
-    ...APP_DIRECTIVES,    
+    ...APP_DIRECTIVES, 
     // DashboardComponent,
 
   ],

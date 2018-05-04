@@ -19,6 +19,7 @@ export class SearchForBookingComponent implements OnInit {
     });
 
   }
+  
   searchPensioner() {
     this.router.navigate(['./warrents/pensionerdetails']);
   }
