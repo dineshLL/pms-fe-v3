@@ -10,6 +10,7 @@ import { WarrentBookingFormComponent } from './../warrents/warrent-booking-form/
 import { WarrentBookingComponent } from './../warrents/warrent-booking/warrent-booking.component'; 
 import { WarrentDetailsComponent } from './../warrents/warrent-details/warrent-details.component'; 
 import { NgModule } from '@angular/core';
+import { registrationSearchComponent } from './registrationSearch/registrationSearch.component';
 import { CommonModule } from '@angular/common';
 import { PageContainerComponent } from './page-container/page-container.component';
 import { ReportsComponent } from './reports/reports.component';
@@ -17,13 +18,13 @@ import { WarrantsRoutingModule } from './warrents.routing.module';
 import { RegistrationFormContainerComponent } from './registration-form-container/registration-form-container.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SearchForRegistrationComponent } from './registration-form-container/search-for-registration/search-for-registration.component';
-import { PensionerListComponent } from './registration-form-container/pensioner-list/pensioner-list.component';
-import { AddWarrentDetailComponent } from './registration-form-container/add-warrent-detail/add-warrent-detail.component';
-import { AddDependentsComponent } from './registration-form-container/add-dependents/add-dependents.component';
+import {  } from './registration-form-container/regi search-for-registration/search-for-registration.component';
+import { PensionerListComponent } from './pensioner-list/pensioner-list.component';
+import { AddWarrentDetailComponent } from './add-warrent-detail/add-warrent-detail.component';
+import { AddDependentsComponent } from './add-dependents/add-dependents.component';
 import { SearchWarrentComponent } from './search-warrent/search-warrent.component';
 import { WarrentListComponent } from './warrent-list/warrent-list.component';
-import { UpdateWarrentComponent } from './update-warrent/update-warrent.component';
+import { UpdateWarrentComponent } from './update-warrent/update-warrent.component'; 
 import { PensionerDetailComponent } from './pensioner-detail/pensioner-detail.component';
 
 
@@ -47,7 +48,7 @@ import { PensionerDetailComponent } from './pensioner-detail/pensioner-detail.co
     WarrentBookingFormComponent, 
     WarrentDetailsComponent,
     WarrentBookingComponent,
-    SearchForRegistrationComponent,
+    registrationSearchComponent,
     PensionerListComponent,
     AddWarrentDetailComponent,
     AddDependentsComponent,     
@@ -62,7 +63,8 @@ import { PensionerDetailComponent } from './pensioner-detail/pensioner-detail.co
     RegistrationSuccessfulComponent,
   ],
   entryComponents:[
-    AddDependentsComponent
+    AddDependentsComponent,
+    PensionerDetailComponent
   ]
 })
 export class WarrentsModule { }

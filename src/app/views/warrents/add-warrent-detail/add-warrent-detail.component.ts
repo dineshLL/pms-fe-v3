@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
 import { MatDialog } from '@angular/material';
-import { JudicialPreFormDialogComponent } from '../../../../common/common-forms/dialogs/judicial-pre-form-dialog/judicial-pre-form-dialog.component';
+import { JudicialPreFormDialogComponent } from '../../../common/common-forms/dialogs/judicial-pre-form-dialog/judicial-pre-form-dialog.component';
 import { AddDependentsComponent } from '../add-dependents/add-dependents.component';
 
 @Component({
@@ -30,6 +30,6 @@ export class AddWarrentDetailComponent implements OnInit {
         alert("Done");
       }
     });
-
   }
+  
 }

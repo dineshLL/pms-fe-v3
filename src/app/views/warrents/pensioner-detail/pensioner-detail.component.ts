@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pensioner-detail',
   templateUrl: './pensioner-detail.component.html',
   styleUrls: ['./pensioner-detail.component.scss']
 })
+
 export class PensionerDetailComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private router: Router) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -25,5 +27,10 @@ export class PensionerDetailComponent implements OnInit {
       dsOffice: ['', Validators.required],
     });
   }
+
+  updatePensioner() {
+    this.router.navigate(['./warrents/registrationform']);
+  }
+
 
 }

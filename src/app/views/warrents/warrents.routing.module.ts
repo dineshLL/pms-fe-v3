@@ -6,8 +6,8 @@ import { ReportsComponent } from "./reports/reports.component";
 import { SearchForBookingComponent } from './search-for-booking/search-for-booking.component';
 import { WarrentBookingFormComponent } from './warrent-booking-form/warrent-booking-form.component';
 import { RegistrationFormContainerComponent } from './registration-form-container/registration-form-container.component';
-import { SearchForRegistrationComponent } from './registration-form-container/search-for-registration/search-for-registration.component';
-import { PensionerListComponent } from './registration-form-container/pensioner-list/pensioner-list.component';
+import { registrationSearchComponent } from './registrationSearch/registrationSearch.component';
+import { PensionerListComponent } from './pensioner-list/pensioner-list.component';
 import { SearchWarrentComponent } from './search-warrent/search-warrent.component';
 import { WarrentListComponent } from './warrent-list/warrent-list.component';
 import { UpdateWarrentComponent } from './update-warrent/update-warrent.component';
@@ -29,7 +29,7 @@ const routes: Routes = [
       },
       {
         path: "registration",
-        component: SearchForRegistrationComponent,        
+        component: registrationSearchComponent,        
         data: {
           title: "Register Pensioner"
         }

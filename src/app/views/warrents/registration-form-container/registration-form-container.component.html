@@ -1,15 +1,6 @@
 <div class="container-without-topnav">
   <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
- 
-    <mat-step>
-        <ng-template matStepLabel>Pensioner Details</ng-template>
-        <app-pensioner-detail></app-pensioner-detail>
-        <div>
-          <div fxFlex></div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-    </mat-step>
-
+     
     <mat-step>
         <ng-template matStepLabel>Warrent Details</ng-template>
         <app-add-warrent-detail></app-add-warrent-detail>
