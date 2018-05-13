@@ -8,6 +8,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReportsComponent } from './reports/reports.component';
 import { WnopReregRoutingModule } from './wnop-rereg.routing.module';
+import { NotificationsModule } from '../../notifications/notifications.module';
+import { ServiceInfoComponent } from './forms/service-info/service-info.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   imports: [
@@ -15,13 +19,18 @@ import { WnopReregRoutingModule } from './wnop-rereg.routing.module';
     WnopReregRoutingModule,
     FlexLayoutModule,
     AngMatImporterModule,
-    CommonFormsModule
+    CommonFormsModule,
+    NotificationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule
   ],
   declarations: [
     DashboardComponent,
     PageContainerComponent,
     ReportsComponent,
-    RegistrationFormContainerComponent
+    RegistrationFormContainerComponent,
+    ServiceInfoComponent
   ]
 })
 export class WnopReregModule { }

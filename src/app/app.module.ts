@@ -78,6 +78,9 @@ import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 import { NavigationService } from './services/nav.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ConstsService } from './services/consts.service';
+import { WnopService } from './services/wnop-service';
+import { SnackAlertService } from './notifications/snack-alert.service';
+import { AlertDialogComponent } from './notifications/alert-dialog/alert-dialog.component';
 
 @NgModule({
   imports: [
@@ -96,19 +99,20 @@ import { ConstsService } from './services/consts.service';
     AppComponent,
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
-    ...APP_DIRECTIVES
+    ...APP_DIRECTIVES,
   ],
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   },
-  {provide: NgbDateAdapter, useClass: NgbDateNativeAdapter},
-  
-  AuthService,
-  NavigationService,
-  ConstsService,
-  ProfileService
-],
-  bootstrap: [ AppComponent ]
+  { provide: NgbDateAdapter, useClass: NgbDateNativeAdapter },
+
+    AuthService,
+    NavigationService,
+    ConstsService,
+    ProfileService,
+    WnopService
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

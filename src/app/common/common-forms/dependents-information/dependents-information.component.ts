@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material';
 import { DependentsInfoTblModel } from './../../models/table-models/dependents-info.tbl.model';
 import { Validators, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { DependentsFormodel } from '../../models/form-models/dependents-info.model';
+import { DependentsInfoModel } from '../../models/form-models/dependents-info.model';
 
 @Component({
   selector: 'common-dependents-information',
@@ -88,7 +88,7 @@ export class DependentsInformationComponent implements OnInit {
   /**
    * get the from model
    */
-  getModel(): DependentsFormodel {
+  getModel(): DependentsInfoModel {
     return {
       spouses: this.spouses,
       otherDependents: this.dependents,
