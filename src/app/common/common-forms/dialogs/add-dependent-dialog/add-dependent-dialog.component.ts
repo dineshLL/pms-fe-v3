@@ -1,6 +1,7 @@
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { SpouseInfoTblModel } from '../../../models/table-models/spose-info.tbl.model';
 
 @Component({
   selector: 'app-add-dependent-dialog',
@@ -13,7 +14,8 @@ export class AddDependentDialogComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private dialogRef: MatDialogRef<AddDependentDialogComponent>
+    private dialogRef: MatDialogRef<AddDependentDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public spouses: SpouseInfoTblModel[]
   ) { }
 
   ngOnInit() {
@@ -23,13 +25,25 @@ export class AddDependentDialogComponent implements OnInit {
       gender: ['', Validators.required],
       dob: ['', Validators.required],
       nic: ['', Validators.required],
-      disabled: [false, Validators.required]
+      disabled: [false, Validators.required],
+      guardian: ['', Validators.required]
     });
+
+    this.initFormConfigurationHooks();
   }
 
   /**button click action handlers */
   close() {
     this.dialogRef.close();
+  }
+
+  /**
+   * init hooks
+   */
+  initFormConfigurationHooks() {
+    if(this.spouses.length == 0) {
+      this.form.get('guardian').disable();  
+    }
   }
 
 }

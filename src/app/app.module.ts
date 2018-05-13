@@ -1,3 +1,4 @@
+import { ProfileService } from './services/profile.service';
 import { NgbDateNativeAdapter } from './adapters/ngb-date-native-adapter';
 import { AuthService } from './services/auth.service';
 import { AngMatImporterModule } from './ang-mat-importer/ang-mat-importer.module';
@@ -74,10 +75,14 @@ import { MatProgressSpinnerModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
+import { NavigationService } from './services/nav.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ConstsService } from './services/consts.service';
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
@@ -98,7 +103,11 @@ import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
     useClass: HashLocationStrategy
   },
   {provide: NgbDateAdapter, useClass: NgbDateNativeAdapter},
-  AuthService
+  
+  AuthService,
+  NavigationService,
+  ConstsService,
+  ProfileService
 ],
   bootstrap: [ AppComponent ]
 })

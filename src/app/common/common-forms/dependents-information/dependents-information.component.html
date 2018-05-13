@@ -12,39 +12,42 @@
     </div>
   </div>
 </div>
-<div class="col-md-10" *ngIf="maritalStatus.value === 'Married'" [formGroup]="spouseInfoForm">
+<div *ngIf="maritalStatus.value === 'Married'">
   <h5>SPOUSE INFORMATION</h5>
-  <div class="form-group row">
-    <label class="col-sm-5 col-form-label">Full Name</label>
-    <div class="col-sm-6">
-      <input formControlName="fullName" type="text" class="form-control" placeholder="Full Name">
+  <table *ngIf="spouses.length > 0" class="table table-sm table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">NAME</th>
+        <th scope="col">RELATION</th>
+        <th scope="col">DATE OF BIRTH</th>
+        <th scope="col">GENDER</th>
+        <th scope="col">NIC NO</th>
+        <th scope="col">BIRTH CERT: NO</th>
+        <th scope="col">MARRIAGE CERT: NO</th>
+        <th scope="col">ACTIONS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let model of spouses">
+        <td>{{ model.name }}</td>
+        <td>{{ model.relation }}</td>
+        <td>{{ model.dob }}</td>
+        <td>{{ model.gender }}</td>
+        <td>{{ model.nic }}</td>
+        <td>{{ model.birthCertNumber }}</td>
+        <td>{{ model.marriageCertNumber }}</td>
+        <td>
+          <button (click)="removeSpouse(model)" type="button" class="btn btn-secondary btn-danger">REMOVE</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div fxLayout="row">
+    <div fxFlex>
+      <button mat-raised-button color="primary" (click)="addSpouse()">ADD SPOUSE</button>
     </div>
   </div>
-  <div class="form-group row">
-    <label class="col-sm-5 col-form-label">Date of Birth</label>
-    <div class="col-sm-6">
-        <input ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" formControlName="dob" ngbDatepicker type="text" class="form-control"
-        placeholder="Date of birth">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-5 col-form-label">NIC Number</label>
-    <div class="col-sm-6">
-      <input formControlName="nic" type="text" class="form-control" placeholder="NIC Number">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-5 col-form-label">Merriage Certificate Number</label>
-    <div class="col-sm-6">
-      <input formControlName="merriageCertNumber" type="text" class="form-control" placeholder="Merriage Certificate Number">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-5 col-form-label">Contact Number</label>
-    <div class="col-sm-6">
-      <input formControlName="contactNumber" type="text" class="form-control" placeholder="Contact Number">
-    </div>
-  </div>
+  <br>
 </div>
 <div>
   <h5>DEPENDENTS INFORMATION</h5>
@@ -57,6 +60,7 @@
         <th scope="col">DATE OF BIRTH</th>
         <th scope="col">NIC NO</th>
         <th scope="col">DIFFERENTLY ABLED</th>
+        <th scope="col" *ngIf="spouses.length > 0">GUARDIAN</th>
         <th scope="col">ACTIONS</th>
       </tr>
     </thead>
@@ -68,6 +72,7 @@
         <td>{{ model.dob }}</td>
         <td>{{ model.nic }}</td>
         <td>{{ model.disabled }}</td>
+        <td  *ngIf="spouses.length > 0">{{ model.guardian }}</td>
         <td>
           <button (click)="remove(model)" type="button" class="btn btn-secondary btn-danger">REMOVE</button>
         </td>

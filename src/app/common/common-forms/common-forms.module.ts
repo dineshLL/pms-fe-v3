@@ -1,3 +1,4 @@
+import { AddSpouseComponent } from './dialogs/add-spouse/add-spouse.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { SalaryInfomationTblComponent } from "./tbl/salary-infomation-tbl/salary-infomation-tbl.component";
 import { AngMatImporterModule } from "./../../ang-mat-importer/ang-mat-importer.module";
@@ -73,6 +74,7 @@ let exportedComponents = [
     GenffTempTransfersInfoComponent,
     AddServiceBreakDialogComponent,
     AddTempServiceDialogComponent,
+    AddSpouseComponent,
     ...exportedComponents
   ],
   exports: exportedComponents,
@@ -83,7 +85,8 @@ let exportedComponents = [
     AddAllowanceDialogComponent,
     AddDeductionDialogComponent,
     AddTempServiceDialogComponent,
-    AddServiceBreakDialogComponent
+    AddServiceBreakDialogComponent,
+    AddSpouseComponent
   ]
 })
 export class CommonFormsModule {}

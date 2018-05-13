@@ -38,4 +38,8 @@ export class LoginComponent {
 
   logout() {
   }
+  
+  gotoWnopReregistration() {
+    this.router.navigate(['wnop-rereg/dashboard']);
+  }
 }

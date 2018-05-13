@@ -1,0 +1,46 @@
+.container {
+    min-height: calc(100vh - (40px + 18px + 45px + 31px));
+    max-height: calc(100vh - (40px + 18px + 45px + 31px));
+    overflow-y: auto;
+    border: 1px solid #eeeeee;
+    display: inline-block;
+    padding: 8px 8px 8px 25px;
+    background-color: #eeeeee;
+  }
+  
+  .sub-tile {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px;
+    padding: 10px 15px 12px;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .sub-tile-header {
+    font-size: 14px;
+    text-align: left;
+    margin: 0px 0px 14px;
+    font-weight: 400;
+  }
+  
+  .sub-tile-count {
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: -.025em;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .sub-tile-title {
+    align-self: flex-end;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .title-container {
+    margin-left: 2.5px;
+    margin-bottom: 10px;
+  }
+  
+  .tile-row-container {
+    margin-bottom: 30px;
+  }

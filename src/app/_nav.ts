@@ -34,6 +34,11 @@ export const navigation = [
     icon: "icon-pie-chart"
   },
   {
+    name: "W&OP Re-Registration",
+    url: "/wnop-rereg/dashboard",
+    icon: "icon-pie-chart"
+  },
+  {
     title: true,
     name: "Reports"
   },

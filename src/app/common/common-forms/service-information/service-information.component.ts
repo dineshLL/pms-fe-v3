@@ -28,4 +28,11 @@ export class ServiceInformationComponent implements OnInit {
       confirmedPost: [true, Validators.required]
     });
   }
+
+  /**
+   * get model
+   */
+  getModel() {
+    return this.form.value;
+  }
 }

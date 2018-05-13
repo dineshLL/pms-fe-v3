@@ -1,3 +1,4 @@
+import { NavigationService } from './../../services/nav.service';
 import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 // Import navigation elements
@@ -22,7 +23,7 @@ import { navigation } from './../../_nav';
 })
 export class AppSidebarNavComponent {
 
-  public navigation = navigation;
+  public navigation = null;
 
   public isDivider(item) {
     return item.divider ? true : false
@@ -32,7 +33,13 @@ export class AppSidebarNavComponent {
     return item.title ? true : false
   }
 
-  constructor() { }
+  constructor(private service: NavigationService) {
+    // this.service.getNavigation().subscribe(response => {
+    //   this.navigation = response;
+    //   this.service.nav = response;
+    // });
+    this.navigation = navigation;
+  }
 }
 
 import { Router } from '@angular/router';
