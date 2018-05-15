@@ -1,6 +1,8 @@
+import { FormGroup } from '@angular/forms';
+import { ChangeDetectorRef } from '@angular/core';
+import { AfterViewInit } from '@angular/core';
 import { DependentsInformationComponent } from './../../../common/common-forms/dependents-information/dependents-information.component';
 import { ServiceInformationComponent } from './../../../common/common-forms/service-information/service-information.component';
-import { AfterViewInit } from '@angular/core';
 import { PersonalInfomationComponent } from './../../../common/common-forms/personal-infomation/personal-infomation.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProfileService } from '../../../services/profile.service';
@@ -10,19 +12,30 @@ import { ProfileService } from '../../../services/profile.service';
   templateUrl: './registration-form-container.component.html',
   styleUrls: ['./registration-form-container.component.scss']
 })
-export class RegistrationFormContainerComponent implements OnInit {
+export class RegistrationFormContainerComponent implements OnInit, AfterViewInit {
 
-  isLinear: true;
+  private personalInfoFormRef: FormGroup;
+  private serviceInfoFormRef: FormGroup;
+  private dependentsInfoFormRef: FormGroup;
+
   @ViewChild(PersonalInfomationComponent) personalInfoForm: PersonalInfomationComponent;
   @ViewChild(ServiceInformationComponent) serviceInfoForm: ServiceInformationComponent;
   @ViewChild(DependentsInformationComponent) dependentsInfoForm: DependentsInformationComponent;
 
   constructor(
-    private service: ProfileService
+    private service: ProfileService,
+    private cdRef: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
-    
+  }
+
+  ngAfterViewInit() {
+    this.personalInfoFormRef = this.personalInfoForm.form;
+    this.serviceInfoFormRef = this.serviceInfoForm.form;
+    this.dependentsInfoFormRef = this.dependentsInfoForm.form;
+
+    this.cdRef.detectChanges();
   }
 
   /**button action handlers */
