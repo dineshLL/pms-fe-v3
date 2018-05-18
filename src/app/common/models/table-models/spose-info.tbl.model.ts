@@ -4,7 +4,7 @@ export interface SpouseInfoTblModel {
     name: string;
     relation: string;
     gender: string;
-    dob: Date;
+    dob: string;
     nic: string;
     disabled: boolean;
     birthCertNumber: number;

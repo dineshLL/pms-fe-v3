@@ -14,7 +14,7 @@
       <label class="col-sm-3 col-form-label col-form-label-sm">Relation
       </label>
       <div class="col-sm-9">
-        <select  formControlName="relation" class="form-control form-control-sm" placeholder="Relation">
+        <select formControlName="relation" class="form-control form-control-sm" placeholder="Relation">
           <option>Wife</option>
           <option>Husband</option>
         </select>
@@ -24,8 +24,8 @@
       <label class="col-sm-3 col-form-label col-form-label-sm">Date of birth
       </label>
       <div class="col-sm-9">
-          <input ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" formControlName="dob" ngbDatepicker type="text" class="form-control"
-          placeholder="Date of birth">
+        <input formControlName="dob" type="text" class="form-control" type="text" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-blue' }"
+          placement="bottom" placeholder="Date of birth">
       </div>
     </div>
     <div class="form-group row">

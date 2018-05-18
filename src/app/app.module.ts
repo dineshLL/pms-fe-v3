@@ -1,3 +1,6 @@
+import { DetailedViewComponent } from './views/wnop-rereg/detailed-view/detailed-view.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { MasterDataService } from './services/master-data.service';
 import { ProfileService } from './services/profile.service';
 import { NgbDateNativeAdapter } from './adapters/ngb-date-native-adapter';
 import { AuthService } from './services/auth.service';
@@ -74,10 +77,13 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { MatProgressSpinnerModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 import { NavigationService } from './services/nav.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ConstsService } from './services/consts.service';
+import { WnopService } from './services/wnop-service';
+import { SnackAlertService } from './notifications/snack-alert.service';
+import { AlertDialogComponent } from './notifications/alert-dialog/alert-dialog.component';
 
 @NgModule({
   imports: [
@@ -87,7 +93,8 @@ import { ConstsService } from './services/consts.service';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    NgbModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    // NgbModule.forRoot(),
     ChartsModule,
     BrowserAnimationsModule,
     AngMatImporterModule
@@ -96,19 +103,21 @@ import { ConstsService } from './services/consts.service';
     AppComponent,
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
-    ...APP_DIRECTIVES
+    ...APP_DIRECTIVES,
   ],
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   },
-  {provide: NgbDateAdapter, useClass: NgbDateNativeAdapter},
-  
-  AuthService,
-  NavigationService,
-  ConstsService,
-  ProfileService
-],
-  bootstrap: [ AppComponent ]
+  // { provide: NgbDateAdapter, useClass: NgbDateNativeAdapter },
+
+    AuthService,
+    NavigationService,
+    ConstsService,
+    ProfileService,
+    WnopService,
+    MasterDataService
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

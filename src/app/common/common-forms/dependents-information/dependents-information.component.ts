@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material';
 import { DependentsInfoTblModel } from './../../models/table-models/dependents-info.tbl.model';
 import { Validators, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { DependentsFormodel } from '../../models/form-models/dependents-info.model';
+import { DependentsInfoModel } from '../../models/form-models/dependents-info.model';
 
 @Component({
   selector: 'common-dependents-information',
@@ -22,24 +22,11 @@ export class DependentsInformationComponent implements OnInit {
   constructor(private dialogMgr: MatDialog, private formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.spouseInfoForm = this.formBuilder.group({
-      fullName: ['', Validators.required],
-      dob: ['', Validators.required],
-      nic: ['', Validators.required],
-      merriageCertNumber: ['', Validators.required],
-      contactNumber: ['', Validators.required]
-    });
     this.form = this.formBuilder.group({
       maritalStatus: ['Unmarried', Validators.required],
-      wnopRefundStatus: [false, Validators.required],
-      spouse: this.spouseInfoForm
+      wnopRefundStatus: [false, Validators.required]
     });
-
-    this.form.get('maritalStatus').valueChanges.subscribe(value => {
-      if (value === 'Married') this.form.get('spouse').enable();
-      else this.form.get('spouse').disable();
-    });
-
+    
     this.form.get('wnopRefundStatus').valueChanges.subscribe(value => {
       if(value) this.form.get('refundAmount').enable();
       else this.form.get('refundAmount').disable();
@@ -88,7 +75,7 @@ export class DependentsInformationComponent implements OnInit {
   /**
    * get the from model
    */
-  getModel(): DependentsFormodel {
+  getModel(): DependentsInfoModel {
     return {
       spouses: this.spouses,
       otherDependents: this.dependents,

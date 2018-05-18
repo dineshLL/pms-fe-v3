@@ -13,4 +13,12 @@ export class MasterDataService {
   getGrades(): Observable<MasterDataContainer> {
     return this.http.get<MasterDataContainer>('https://api.myjson.com/bins/1h5a5y');
   }
+
+  getDesignations(): Observable<MasterDataContainer> {
+    return this.http.get<MasterDataContainer>('https://api.myjson.com/bins/sdnee');
+  }
+
+  getServices(): Observable<MasterDataContainer> {
+    return this.http.get<MasterDataContainer>('https://api.myjson.com/bins/o9rbq');
+  }
 }

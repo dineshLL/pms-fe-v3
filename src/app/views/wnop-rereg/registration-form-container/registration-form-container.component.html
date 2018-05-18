@@ -1,6 +1,6 @@
 <div class="container-without-topnav">
-  <mat-horizontal-stepper [linear]="false" #stepper="matHorizontalStepper">
-    <mat-step [stepControl]="personalInfoFormRef">
+  <mat-horizontal-stepper [linear]="true" #stepper="matHorizontalStepper">
+    <mat-step [stepControl]="personalInfoForm.form">
       <ng-template matStepLabel>Personal Information</ng-template>
       <common-personal-infomation></common-personal-infomation>
       <div>
@@ -8,16 +8,16 @@
         <button mat-button matStepperNext>Next</button>
       </div>
     </mat-step>
-    <mat-step [stepControl]="serviceInfoFormRef">
+    <mat-step [stepControl]="serviceInfoForm.form">
       <ng-template matStepLabel>Service Information</ng-template>
-      <common-service-information></common-service-information>
+      <wnop-service-info></wnop-service-info>
       <div>
         <div fxFlex></div>
         <button mat-button matStepperNext>Next</button>
       </div>
     </mat-step>
 
-    <mat-step [stepControl]="dependentsInfoFormRef">
+    <mat-step [stepControl]="dependentsInfoForm.form">
       <ng-template matStepLabel>Dependents Information</ng-template>
       <common-dependents-information></common-dependents-information>
       <div>
@@ -31,9 +31,9 @@
         <div class="item item-4" fxFlex>
           <div fxLayout="column" fxLayoutAlign="space-between center" style="margin-top: 200px">
             <section style="text-align: left" class="mat-typography">
-              <h1>{{ 'SUCCESSFUL_MSG' | uppercase }}</h1>
+              <h1>{{ 'please click the submit button to save the application' | uppercase }}</h1>
             </section>
-            <p>INFORMATION </p>
+            <p>some information some information</p>
             <mat-card-actions>
               <div fxFlex></div>
               <button mat-raised-button color="primary" (click)="submit()">SUBMIT</button>

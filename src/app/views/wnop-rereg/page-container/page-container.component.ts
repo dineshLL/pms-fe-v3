@@ -17,14 +17,14 @@ export class PageContainerComponent implements OnInit {
       code: 2,
       title: "Registration"
     },
-    {
-      link: ["search"],
-      code: 3,
-      title: "Search Application"
-    },
+    // {
+    //   link: ["search"],
+    //   code: 3,
+    //   title: "Search Application"
+    // },
     {
       link: ["reports"],
-      code: 4,
+      code: 3,
       title: "Reports"
     }
   ];

@@ -9,8 +9,8 @@
       <div class="col-sm-9">
         <!-- <input formControlName="guardian" type="text" class="form-control form-control-sm" placeholder="Name of the dependent"> -->
         <select formControlName="guardian" class="form-control form-control-sm" placeholder="Guardian">
-            <option *ngFor="let spouse of spouses" value={{spouse.nic}}>{{ spouse.name }}</option>
-          </select>
+          <option *ngFor="let spouse of spouses" value={{spouse.nic}}>{{ spouse.name }}</option>
+        </select>
       </div>
     </div>
     <div class="form-group row">
@@ -44,8 +44,9 @@
       <label class="col-sm-3 col-form-label col-form-label-sm">Date of birth
       </label>
       <div class="col-sm-9">
-        <input ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" formControlName="dob" ngbDatepicker type="text" class="form-control"
-          placeholder="Date of birth">
+        <input formControlName="dob" type="text" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-blue' }"
+        placement="right"  
+        placeholder="Date of birth">
       </div>
     </div>
     <div class="form-group row">
@@ -73,4 +74,4 @@
   <button [disabled]="!form.valid" [mat-dialog-close]=form class="btn btn-primary">
     ADD
   </button>
-</mat-dialog-actions>{{ form.value | json }}
+</mat-dialog-actions>

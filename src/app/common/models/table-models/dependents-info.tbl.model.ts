@@ -2,7 +2,7 @@ export interface DependentsInfoTblModel {
     name: string;
     relation: string;
     gender: string;
-    dob: Date;
+    dob: string;
     nic: string;
     disabled: boolean;
 }

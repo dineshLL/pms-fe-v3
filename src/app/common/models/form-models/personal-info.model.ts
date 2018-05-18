@@ -8,5 +8,5 @@ export interface PersonalInfoModel {
     gender:     string;
     district:   string;
     ds:         string;
-    gn:         string;
+    gn:         number;
 }

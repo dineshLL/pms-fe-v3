@@ -1,0 +1,166 @@
+<div fxLayout="row">
+  <div class="page-inline-menu" fxLayout="row" fxLayoutAdivgn="start center">
+    <div class="col-3">
+      <h5>TEXT HERE</h5>
+    </div>
+    <div role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/wnop-rereg/edit']">
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        Edit
+      </button>
+      <button type="button" class="btn btn-primary btn-sm">Approve</button>
+      <button type="button" class="btn btn-danger btn-sm">Reject</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <mat-card-content>
+    <mat-tab-group>
+      <mat-tab label="Personal Information">
+        <div style="padding-top: 20px">
+          <table class="table table-sm" style="border-top: none">
+            <tbody>
+              <tr>
+                <td class="titile-td">Name in full</td>
+                <td>{{ model.personal.fullName }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Name with initials</td>
+                <td>{{ model.personal.name }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Address</td>
+                <td>{{ model.personal.address }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Date of Birth</td>
+                <td>{{ model.personal.dob }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">NIC Number</td>
+                <td>{{ model.personal.nic }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">W&OP Number</td>
+                <td>{{ model.personal.wnopNumber }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Gender</td>
+                <td>{{ model.personal.gender }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">District</td>
+                <td>{{ model.personal.district }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Divisional Secretariat</td>
+                <td>{{ model.personal.ds }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Village Office</td>
+                <td>{{ model.personal.gn }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Service Information">
+        <div style="padding-top: 20px">
+          <table class="table table-sm" style="border-top: none">
+            <tbody>
+              <tr>
+                <td class="titile-td">Officer Belongs to</td>
+                <td>{{ model.service.officerBelongsTo }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Service</td>
+                <td>{{ model.service.service }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Grade</td>
+                <td>{{ model.service.grade }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Designation</td>
+                <td>{{ model.service.designation }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Date of First Appoinment</td>
+                <td>{{ model.service.dateOfFirstAppoinment }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Date of Permanant Appoinment</td>
+                <td>{{ model.service.dateOfPermanantAppoinment }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Confirmed & Pensionable</td>
+                <td>{{ model.service.confirmedAndPensionable }}</td>
+              </tr>
+              <tr>
+                <td class="titile-td">Confirmed & Designation</td>
+                <td>{{ model.service.confirmedPost }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Dependents Information">
+        <div style="padding-top: 20px">
+          <h6>SPOUSE INFORMATION</h6>
+          <table class="table table-sm table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">NAME</th>
+                <th scope="col">RELATION</th>
+                <th scope="col">DATE OF BIRTH</th>
+                <th scope="col">GENDER</th>
+                <th scope="col">NIC NO</th>
+                <th scope="col">BIRTH CERT: NO</th>
+                <th scope="col">MARRIAGE CERT: NO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let model of spouses">
+                <td>{{ model.name }}</td>
+                <td>{{ model.relation }}</td>
+                <td>{{ model.dob }}</td>
+                <td>{{ model.gender }}</td>
+                <td>{{ model.nic }}</td>
+                <td>{{ model.birthCertNumber }}</td>
+                <td>{{ model.marriageCertNumber }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <div>
+          <h6>DEPENDENTS INFORMATION</h6>
+          <table class="table table-sm table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">NAME</th>
+                <th scope="col">RELATION</th>
+                <th scope="col">GENDER</th>
+                <th scope="col">DATE OF BIRTH</th>
+                <th scope="col">NIC NO</th>
+                <th scope="col">DIFFERENTLY ABLED</th>
+                <th scope="col">GUARDIAN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let model of dependents">
+                <td>{{ model.name }}</td>
+                <td>{{ model.relation }}</td>
+                <td>{{ model.gender }}</td>
+                <td>{{ model.dob }}</td>
+                <td>{{ model.nic }}</td>
+                <td>{{ model.disabled }}</td>
+                <td>{{ model.guardian }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</div>

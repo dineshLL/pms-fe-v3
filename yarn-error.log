@@ -2,7 +2,7 @@ Arguments:
   C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js start
 
 PATH: 
-  C:\Program Files\Microsoft MPI\Bin\;E:\orcl\product\11.2.0\dbhome_1\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Dinesh\AppData\Local\atom\bin;C:\Program Files\MongoDB\Server\3.4\bin;C:\Users\Dinesh\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Inno Setup 5;E:\developments servers\apache-maven-3.5.0\bin;C:\Python27;C:\Python27\Scripts;C:\Program Files\Heroku\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Dinesh\AppData\Local\GitHubDesktop\bin;E:\developments servers\cmder;C:\Users\Dinesh\AppData\Roaming\npm;C:\Users\Dinesh\AppData\Local\Yarn\bin;E:\playing\flutter\bin
+  C:\Program Files\Microsoft MPI\Bin\;E:\orcl\product\11.2.0\dbhome_1\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Dinesh\AppData\Local\atom\bin;C:\Program Files\MongoDB\Server\3.4\bin;C:\Users\Dinesh\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Inno Setup 5;E:\developments servers\apache-maven-3.5.0\bin;C:\Python27;C:\Python27\Scripts;C:\Program Files\Heroku\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Dinesh\AppData\Local\GitHubDesktop\bin;E:\developments servers\cmder;C:\Users\Dinesh\AppData\Roaming\npm;C:\Users\Dinesh\AppData\Local\Yarn\bin;E:\playing\flutter\bin;C:\Users\Dinesh\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin
 
 Yarn version: 
   1.5.1
@@ -48,7 +48,6 @@ npm manifest:
       "@ng-bootstrap/ng-bootstrap": "^1.0.2",
       "@types/fullcalendar": "^3.5.0",
       "angular2-csv": "^0.2.5",
-      "angular2-json-schema-form": "^0.7.0-alpha.1",
       "bootstrap": "4.0.0",
       "chart.js": "2.7.1",
       "core-js": "2.5.3",
@@ -60,7 +59,7 @@ npm manifest:
       "ng-fullcalendar": "1.5.2",
       "ng2-charts": "1.6.0",
       "ng2-dragula": "^1.5.0",
-      "ngx-bootstrap": "2.0.2",
+      "ngx-bootstrap": "^2.0.5",
       "promise-polyfill": "^7.1.0",
       "rxjs": "5.5.6",
       "simple-line-icons": "^2.4.1",
@@ -455,14 +454,6 @@ Lockfile:
       fast-json-stable-stringify "^2.0.0"
       json-schema-traverse "^0.3.0"
   
-  ajv@^6.0.1:
-    version "6.2.1"
-    resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.2.1.tgz#28a6abc493a2abe0fb4c8507acaedb43fa550671"
-    dependencies:
-      fast-deep-equal "^1.0.0"
-      fast-json-stable-stringify "^2.0.0"
-      json-schema-traverse "^0.3.0"
-  
   ajv@^6.1.0:
     version "6.1.1"
     resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.1.1.tgz#978d597fbc2b7d0e5a5c3ddeb149a682f2abfa0e"
@@ -500,13 +491,6 @@ Lockfile:
   angular2-csv@^0.2.5:
     version "0.2.5"
     resolved "https://registry.yarnpkg.com/angular2-csv/-/angular2-csv-0.2.5.tgz#8179f4392ed5c62b4043bf819e3bfc1ee8abf8f3"
-  
-  angular2-json-schema-form@^0.7.0-alpha.1:
-    version "0.7.0-alpha.1"
-    resolved "https://registry.yarnpkg.com/angular2-json-schema-form/-/angular2-json-schema-form-0.7.0-alpha.1.tgz#27919e9926ee3bc509dc10fe2f1e0cddb6e210a2"
-    dependencies:
-      ajv "^6.0.1"
-      lodash "4.x"
   
   ansi-escapes@^3.0.0:
     version "3.0.0"
@@ -4491,13 +4475,13 @@ Lockfile:
     version "4.5.0"
     resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   
-  lodash@4.x, lodash@^4.0.0, lodash@^4.11.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@^4.5.0, lodash@~4.17.4:
-    version "4.17.5"
-    resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
-  
   lodash@^3.10.1:
     version "3.10.1"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+  
+  lodash@^4.0.0, lodash@^4.11.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@^4.5.0, lodash@~4.17.4:
+    version "4.17.5"
+    resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
   
   log4js@^2.3.9:
     version "2.5.3"
@@ -4934,9 +4918,9 @@ Lockfile:
     dependencies:
       dragula "^3.7.2"
   
-  ngx-bootstrap@2.0.2:
-    version "2.0.2"
-    resolved "https://registry.yarnpkg.com/ngx-bootstrap/-/ngx-bootstrap-2.0.2.tgz#6862b2ee4764bb6cfd34c66528873d0d050c2faa"
+  ngx-bootstrap@^2.0.5:
+    version "2.0.5"
+    resolved "https://registry.yarnpkg.com/ngx-bootstrap/-/ngx-bootstrap-2.0.5.tgz#83aab39d1e4fe811fad2b34f7927f9ce19d68daa"
   
   no-case@^2.2.0:
     version "2.3.2"

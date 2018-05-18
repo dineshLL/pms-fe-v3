@@ -22,7 +22,7 @@
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">Date of Birth</label>
     <div class="col-sm-6">
-      <input ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" formControlName="dob" ngbDatepicker type="text" class="form-control"
+      <input formControlName="dob" type="text" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-blue' }"
         placeholder="Date of birth">
     </div>
   </div>
@@ -79,8 +79,8 @@
     <label class="col-sm-4 col-form-label">Grama Niladhari Division</label>
     <div class="col-sm-6">
       <select formControlName="gn" class="form-control form-control-sm" placeholder="Grama Niladhari Division">
-        <option>GN 1</option>
-        <option>GN 2</option>
+        <option value="1">GN 1</option>
+        <option value="1">GN 2</option>
         <option>GN 3</option>
         <option>GN 4</option>
         <option>GN 5</option>
