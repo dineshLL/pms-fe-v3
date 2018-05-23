@@ -1,3 +1,6 @@
+import { DashboardService } from './services/dashboard.service';
+import { SessionStoreService } from './services/session-store.service';
+import { AuthGuardService } from './guards/auth-guard.service';
 import { DetailedViewComponent } from './views/wnop-rereg/detailed-view/detailed-view.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { MasterDataService } from './services/master-data.service';
@@ -79,11 +82,12 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 import { NavigationService } from './services/nav.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ConstsService } from './services/consts.service';
 import { WnopService } from './services/wnop-service';
 import { SnackAlertService } from './notifications/snack-alert.service';
 import { AlertDialogComponent } from './notifications/alert-dialog/alert-dialog.component';
+import { AuthInterceptor } from './services/interceptors/auth-interceptor.service';
 
 @NgModule({
   imports: [
@@ -116,7 +120,13 @@ import { AlertDialogComponent } from './notifications/alert-dialog/alert-dialog.
     ConstsService,
     ProfileService,
     WnopService,
-    MasterDataService
+    MasterDataService,
+    DashboardService,
+
+    AuthGuardService,
+    SessionStoreService,
+
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

@@ -16,8 +16,8 @@ export class WnopService {
     return this.http.post<any>(this.consts.WNOP_SERVICE_BASE + 'profiles', model);
   }
 
-  get(): Observable<WnopProfileModel> {
-    return this.http.get<WnopProfileModel>('https://api.myjson.com/bins/ql8sy');
+  get(requestId: number): Observable<WnopProfileModel> {
+    return this.http.get<WnopProfileModel>(this.consts.WNOP_SERVICE_BASE + 'requests/' + requestId);
   }
 
 }

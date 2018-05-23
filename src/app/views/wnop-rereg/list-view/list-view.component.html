@@ -1,7 +1,7 @@
 <div fxLayout="row">
   <div class="page-inline-menu" fxLayout="row" fxLayoutAdivgn="start center">
     <div>
-      <h5>APPROVAL PENDING APPLICATIONS</h5>
+      <h5>{{ tile.displayText | uppercase }}</h5>
     </div>
   </div>
 </div>
@@ -16,12 +16,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>184890</td>
-        <td>Test Name Test Name Name</td>
-        <td>12456789V</td>
-        <td>
-          <button [routerLink]="['/wnop-rereg/detailed']" type="button" class="btn btn-primary btn-sm">MORE</button>
+      <tr *ngFor="let request of requests">
+        <td>{{ request.requestId }}</td>
+        <td>{{ request.name }}</td>
+        <td>{{ request.nic }}</td>
+        <td style="width: 10%;">
+          <button (click)="moreBtnClicked(request)" type="button" class="btn btn-primary btn-sm">MORE</button>
         </td>
       </tr>
     </tbody>

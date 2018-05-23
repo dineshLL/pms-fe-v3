@@ -1,15 +1,19 @@
 <div fxLayout="row">
   <div class="page-inline-menu" fxLayout="row" fxLayoutAdivgn="start center">
     <div class="col-3">
-      <h5>TEXT HERE</h5>
+      <h5>W&OP APPLICATION</h5>
     </div>
     <div role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/wnop-rereg/edit']">
+      <!-- <button type="button" class="btn btn-primary btn-sm" (click)="actionBtnClicked()">
         <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
         Edit
-      </button>
-      <button type="button" class="btn btn-primary btn-sm">Approve</button>
-      <button type="button" class="btn btn-danger btn-sm">Reject</button>
+      </button> -->
+      <span *ngFor="let action of actions">
+        <button
+        (click)="actionBtnClicked(action)"
+        type="button" class="btn btn-primary btn-sm">{{ action.displayText }}</button>
+      </span>
+
     </div>
   </div>
 </div>
@@ -120,7 +124,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let model of spouses">
+              <tr *ngFor="let model of model.dependents.spouses">
                 <td>{{ model.name }}</td>
                 <td>{{ model.relation }}</td>
                 <td>{{ model.dob }}</td>
@@ -148,7 +152,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let model of dependents">
+              <tr *ngFor="let model of model.dependents.otherDependents">
                 <td>{{ model.name }}</td>
                 <td>{{ model.relation }}</td>
                 <td>{{ model.gender }}</td>

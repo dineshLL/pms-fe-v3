@@ -1,3 +1,5 @@
+import { AuthService } from "./../../services/auth.service";
+import { SessionStoreService } from "./../../services/session-store.service";
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
@@ -5,10 +7,15 @@ import { Router } from "@angular/router";
   templateUrl: "login.component.html"
 })
 export class LoginComponent {
-  email: string;
-  password: string;
+  
+  username: string = 'dinesh';
+  password: string = 'Dinesh';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private session: SessionStoreService,
+    private service: AuthService
+  ) {}
 
   // /**
   //  * button action handlers
@@ -17,29 +24,28 @@ export class LoginComponent {
   //   this.router.navigate(['dashboard']);
   // }
 
-  signup() {
-    
-  }
+  signup() {}
 
   login() {
-    // this.authService
-    //   .login(this.email, this.password)
-    //   .then(response => {
-    //     this.router.navigate(["dashboard"]);
-    //     console.log(response);
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   });
-    // //this.router.navigate(['dashboard']);
-    // this.email = this.password = "";
-    this.router.navigate(['dashboard']);
+    this.service.authenticate(this.username, this.password).subscribe(
+      response => {
+        this.session.setAuthInformation(response);
+        this.router.navigate(['dashboard']);
+      },
+      error => {}
+    );
+    this.username = this.password = "";
   }
 
-  logout() {
-  }
-  
+  logout() {}
+
   gotoWnopReregistration() {
-    this.router.navigate(['wnop-rereg/dashboard']);
+    this.service.authenticate('wnopdefault', 'wnopdefault').subscribe(
+      response => {
+        this.session.setAuthInformation(response);
+        this.router.navigate(['dashboard']);
+      },
+      error => {}
+    );
   }
 }

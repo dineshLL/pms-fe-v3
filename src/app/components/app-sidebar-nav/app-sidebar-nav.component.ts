@@ -1,3 +1,5 @@
+import { MainNavInfoModel } from './../../common/models/dto-models/main-nav-info.model';
+import { Router } from '@angular/router';
 import { NavigationService } from './../../services/nav.service';
 import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
@@ -34,15 +36,13 @@ export class AppSidebarNavComponent {
   }
 
   constructor(private service: NavigationService) {
-    // this.service.getNavigation().subscribe(response => {
-    //   this.navigation = response;
-    //   this.service.nav = response;
-    // });
-    this.navigation = navigation;
+    this.service.getNavigation().subscribe(response => {
+      this.navigation = response;
+      this.service.nav = response;
+    });
+    // this.navigation = navigation;
   }
 }
-
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar-nav-item',
@@ -89,8 +89,8 @@ export class AppSidebarNavItemComponent {
     <a *ngIf="!isExternalLink(); else external"
       [ngClass]="hasVariant() ? 'nav-link nav-link-' + link.variant : 'nav-link'"
       routerLinkActive="active"
-      [routerLink]="[link.url]"
-      (click)="hideMobile()">
+      
+      (click)="go()">
       <i *ngIf="isIcon()" class="{{ link.icon }}"></i>
       {{ link.name }}
       <span *ngIf="isBadge()" [ngClass]="'badge badge-' + link.badge.variant">{{ link.badge.text }}</span>
@@ -105,7 +105,7 @@ export class AppSidebarNavItemComponent {
   `
 })
 export class AppSidebarNavLinkComponent {
-  @Input() link: any;
+  @Input() link: MainNavInfoModel;
 
   public hasVariant() {
     return this.link.variant ? true : false
@@ -129,7 +129,13 @@ export class AppSidebarNavLinkComponent {
     }
   }
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) {}
+
+  go() {
+    this.router.navigate([this.link.url], { queryParams: { mid: this.link.menuItemId, cid: this.link.configId} });
+  }
 }
 
 @Component({

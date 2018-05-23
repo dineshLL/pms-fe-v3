@@ -4,5 +4,8 @@ td {
 
 .titile-td {
     width: 25%;
+}
+
+.titile-td + td {
     font-weight: bold;
 }

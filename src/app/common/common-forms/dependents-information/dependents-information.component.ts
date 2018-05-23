@@ -83,4 +83,11 @@ export class DependentsInformationComponent implements OnInit {
       wnopRefundStatus: this.wnopRefundStatus.value 
     }
   }
+
+  setModel(model: DependentsInfoModel) {
+    this.maritalStatus.setValue(model.maritalStatus);
+    this.spouses = model.spouses;
+    this.dependents = model.otherDependents;
+    this.wnopRefundStatus.setValue(model.wnopRefundStatus);
+  }
 }
