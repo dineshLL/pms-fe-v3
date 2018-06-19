@@ -17,9 +17,9 @@ export class ConstsService {
 
   //private BASE_URL = 'http://localhost:8080/profile-mgt-service/';
 
-  private DEV_HOST = 'http://192.168.43.250:8080/';
+  private DEV_HOST = 'http://192.168.102.133:8080/';
 
-  public PROFILE_SERVICE_BASE = this.DEV_HOST + 'api/';
+  public PROFILE_SERVICE_BASE = this.DEV_HOST + 'user-mgt-service/';
   public WNOP_SERVICE_BASE = this.DEV_HOST + 'wnop-rereg-mgt-service/';
   public CONFIG_SERVICE_BASE = this.DEV_HOST + 'app-config-api/';
 }

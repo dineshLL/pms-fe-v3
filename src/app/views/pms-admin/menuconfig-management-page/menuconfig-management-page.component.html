@@ -1,0 +1,30 @@
+<div fxLayout="row">
+  <div class="page-inline-menu" fxLayout="row" fxLayoutAdivgn="start center">
+    <div>
+      <h5>PMS Navigation Management</h5>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div fxLayout="column">
+    <div fxFlex class="title-container ">
+      <div>Dashboard</div>
+    </div>
+    <div fxFlex class="sub-tile-container">
+      <div fxLayout="row" fxLayoutWrap>
+        <div *ngFor="let tile of tiles"
+        (click)="tileClicked(tile)"
+        
+        class="sub-tile card" style="width: 175px; height: 85px; margin: 2.5px">
+          <div>
+            <h3 class="sub-tile-header">{{ tile.displayText }}</h3>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div fxFlex="30" class="sub-tile-count"></div>
+            <div fxFlex class="sub-tile-title"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

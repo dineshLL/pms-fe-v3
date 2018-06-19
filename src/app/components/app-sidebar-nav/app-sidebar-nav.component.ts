@@ -1,10 +1,11 @@
 import { MainNavInfoModel } from './../../common/models/dto-models/main-nav-info.model';
 import { Router } from '@angular/router';
 import { NavigationService } from './../../services/nav.service';
-import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2, OnDestroy } from '@angular/core';
 
 // Import navigation elements
 import { navigation } from './../../_nav';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-sidebar-nav',
@@ -20,12 +21,14 @@ import { navigation } from './../../_nav';
             <app-sidebar-nav-item [item]='navitem'></app-sidebar-nav-item>
           </ng-template>
         </ng-template>
+        <!-- <app-spinner *ngIf="!navigation"></app-spinner> -->
       </ul>
     </nav>`
 })
-export class AppSidebarNavComponent {
+export class AppSidebarNavComponent implements OnDestroy {
 
   public navigation = null;
+  private serviceSub: Subscription;
 
   public isDivider(item) {
     return item.divider ? true : false
@@ -36,18 +39,22 @@ export class AppSidebarNavComponent {
   }
 
   constructor(private service: NavigationService) {
-    this.service.getNavigation().subscribe(response => {
+    this.serviceSub = this.service.getNavigation().subscribe(response => {
       this.navigation = response;
       this.service.nav = response;
     });
     // this.navigation = navigation;
+  }
+
+  ngOnDestroy() {
+    this.serviceSub.unsubscribe();
   }
 }
 
 @Component({
   selector: 'app-sidebar-nav-item',
   template: `
-    <li *ngIf="!isDropdown(); else dropdown" [ngClass]="hasClass() ? 'nav-item ' + item.class : 'nav-item'">
+    <li style="cursor: pointer;" *ngIf="!isDropdown(); else dropdown" [ngClass]="hasClass() ? 'nav-item ' + item.class : 'nav-item'">
       <app-sidebar-nav-link [link]='item'></app-sidebar-nav-link>
     </li>
     <ng-template #dropdown>

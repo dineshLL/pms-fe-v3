@@ -1,5 +1,5 @@
 export interface TileInfoModel {
     displayText: string;
-    level:       number;
+    level?:       number;
     link:        string;
 }

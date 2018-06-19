@@ -10,4 +10,5 @@ export interface ServiceInfoModel {
     retirementReason:          string;
     dateOfRetirement:          string;
     salaryCircular:            string;
+    confirmedPost:             boolean;
 }

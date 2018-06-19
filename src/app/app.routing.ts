@@ -57,6 +57,10 @@ export const routes: Routes = [
       {
         path: "wnop-rereg",
         loadChildren: "./views/wnop-rereg/wnop-rereg.module#WnopReregModule"
+      },
+      {
+        path: "admin",
+        loadChildren: "./views/pms-admin/pms-admin.module#PmsAdminModule"
       }
     ]
   },

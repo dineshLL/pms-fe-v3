@@ -32,6 +32,8 @@ import { GenffTempTransfersInfoComponent } from "./tbl/genff-temp-transfers-info
 import { AddServiceBreakDialogComponent } from "./dialogs/add-service-break-dialog/add-service-break-dialog.component";
 import { AddTempServiceDialogComponent } from "./dialogs/add-temp-service-dialog/add-temp-service-dialog.component";
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { SpinnerWComponent } from './dialogs/spinner-w/spinner-w.component';
+import { SpinnerComponent } from './dialogs/spinner/spinner.component';
 // import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 let exportedComponents = [
@@ -42,7 +44,9 @@ let exportedComponents = [
   PensionableInformationComponent,
   PaymentInformationComponent,
   GrnffCalculationsComponent,
-  GrnffQuestionsComponent
+  GrnffQuestionsComponent,
+  SpinnerComponent,
+  SpinnerWComponent
 ];
 
 @NgModule({

@@ -15,9 +15,11 @@ export class AuthGuardService implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     // console.log(route.url);  //<-- should be current path, whereas the route: ActivatedRouteSnapshot object should be the requested route
 
-    if (this.session.isLoggedIn) {
-      return true;
-    }
-    return false;
+    // if (this.session.isLoggedIn) {
+    //   return true;
+    // }
+    // return false;
+
+    return true;
   }
 }

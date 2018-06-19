@@ -22,7 +22,6 @@ import { MatDialog } from "@angular/material";
 })
 export class RegistrationFormContainerComponent
   implements OnInit, AfterViewInit {
-  
   @ViewChild(PersonalInfomationComponent)
   personalInfoForm: PersonalInfomationComponent;
   @ViewChild(ServiceInfoComponent) serviceInfoForm: ServiceInfoComponent;
@@ -30,6 +29,7 @@ export class RegistrationFormContainerComponent
   dependentsInfoForm: DependentsInformationComponent;
 
   private isEditing = false;
+  private refId: number;
 
   constructor(
     private service: WnopService,
@@ -73,7 +73,7 @@ export class RegistrationFormContainerComponent
 
         this.service.get(param.requestId).subscribe(
           response => {
-            console.log(response);
+            this.refId = response.refId;
 
             this.personalInfoForm.form.patchValue(response.personal);
             this.serviceInfoForm.form.patchValue(response.service);
@@ -91,31 +91,53 @@ export class RegistrationFormContainerComponent
 
   /**button action handlers */
   submit() {
-    var model: WnopProfileModel = {
+    let model: WnopProfileModel = {
       personal: this.personalInfoForm.getModel(),
       service: this.serviceInfoForm.getModel(),
       dependents: this.dependentsInfoForm.getModel()
     };
 
-    this.service.create(model).subscribe(
-      respose => {
-        const dialogRef = this.dialog.open(AlertDialogComponent, {
-          width: "400px",
-          data: {
-            title: "Successful",
-            message: "W&OP re-registration successful",
-            buttonText: "OK"
-          }
-        });
+    if (!this.isEditing) {
+      this.service.create(model).subscribe(
+        respose => {
+          const dialogRef = this.dialog.open(AlertDialogComponent, {
+            width: "400px",
+            data: {
+              title: "Successful",
+              message: "W&OP re-registration successful",
+              buttonText: "OK"
+            }
+          });
 
-        dialogRef.afterClosed().subscribe(result => {
-          //this.router.navigate(["/gen/successful"]);
-        });
-      },
-      error => {
-        console.log(error);
-      }
-    );
-    // console.log(model);
+          dialogRef.afterClosed().subscribe(result => {
+            //this.router.navigate(["/gen/successful"]);
+          });
+        },
+        error => {
+          console.log(error);
+        }
+      );
+      // console.log(model);
+    } else {
+      this.service.update(this.refId, model).subscribe(
+        respose => {
+          const dialogRef = this.dialog.open(AlertDialogComponent, {
+            width: "400px",
+            data: {
+              title: "Successful",
+              message: "Profile Updated",
+              buttonText: "OK"
+            }
+          });
+
+          dialogRef.afterClosed().subscribe(result => {
+            //this.router.navigate(["/gen/successful"]);
+          });
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
   }
 }

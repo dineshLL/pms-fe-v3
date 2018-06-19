@@ -1,17 +1,19 @@
-import { Router } from '@angular/router';
-import { RequestInfoModel } from './../../../common/models/dto-models/request-info.model';
-import { TileInfoModel } from './../../../common/models/dto-models/tile.info-model';
-import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { DashboardService } from '../../../services/dashboard.service';
+import { Subscription } from "rxjs/Subscription";
+import { OnDestroy } from "@angular/core";
+import { Router } from "@angular/router";
+import { RequestInfoModel } from "./../../../common/models/dto-models/request-info.model";
+import { TileInfoModel } from "./../../../common/models/dto-models/tile.info-model";
+import { ActivatedRoute } from "@angular/router";
+import { Component, OnInit } from "@angular/core";
+import { DashboardService } from "../../../services/dashboard.service";
 
 @Component({
-  selector: 'app-list-view',
-  templateUrl: './list-view.component.html',
-  styleUrls: ['./list-view.component.scss']
+  selector: "app-list-view",
+  templateUrl: "./list-view.component.html",
+  styleUrls: ["./list-view.component.scss"]
 })
-export class ListViewComponent implements OnInit {
-
+export class ListViewComponent implements OnInit, OnDestroy {
+  private subscription: Subscription;
   tile: TileInfoModel;
   requests: RequestInfoModel[];
 
@@ -19,29 +21,31 @@ export class ListViewComponent implements OnInit {
     private route: ActivatedRoute,
     private dashboardService: DashboardService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
-    this.route.queryParams
-      .subscribe(
-        (param: TileInfoModel) => {
-          this.tile = param;
-          this.dashboardService.getRequests(this.tile.level).subscribe(
-            response => {
-              this.requests = response;
-            },
-            error => {
-              console.log(error);
-            }
-          );
-        }
-      );
+    this.subscription = this.route.queryParams.subscribe(
+      (param: TileInfoModel) => {
+        this.tile = param;
+        this.dashboardService.getRequests(this.tile.level).subscribe(
+          response => {
+            this.requests = response;
+          },
+          error => {
+            console.log(error);
+          }
+        );
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   moreBtnClicked(model: RequestInfoModel) {
     model.name = null;
     model.nic = null;
-    this.router.navigate(['/wnop-rereg/detailed'], { queryParams: model });
+    this.router.navigate(["/wnop-rereg/detailed"], { queryParams: model });
   }
-
 }

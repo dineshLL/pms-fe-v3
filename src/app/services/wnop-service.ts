@@ -20,4 +20,10 @@ export class WnopService {
     return this.http.get<WnopProfileModel>(this.consts.WNOP_SERVICE_BASE + 'requests/' + requestId);
   }
 
+  update(refId, model: WnopProfileModel): Observable<any> {
+    return this.http.put(
+      this.consts.WNOP_SERVICE_BASE + 'profiles/' + refId , model
+    );
+  }
+
 }

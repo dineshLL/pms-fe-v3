@@ -1,3 +1,4 @@
+import { LowerCaseInputDirective } from './common/directives/name-uppercase.directive';
 import { DashboardService } from './services/dashboard.service';
 import { SessionStoreService } from './services/session-store.service';
 import { AuthGuardService } from './guards/auth-guard.service';
@@ -108,6 +109,7 @@ import { AuthInterceptor } from './services/interceptors/auth-interceptor.servic
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
     ...APP_DIRECTIVES,
+    LowerCaseInputDirective
   ],
   providers: [{
     provide: LocationStrategy,

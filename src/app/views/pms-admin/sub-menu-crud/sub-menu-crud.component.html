@@ -1,0 +1,47 @@
+<div fxLayout="row">
+  <div class="page-inline-menu" fxLayout="row" fxLayoutAdivgn="start center">
+    <div class="col-5">
+      <h5>SUB NAVIGATION ({{ mainMenu.name }})</h5>
+    </div>
+    <div role="group" aria-label="Basic example">
+      <!-- <span *ngFor="let action of actions">
+        <button (click)="actionBtnClicked(action)" type="button" class="btn btn-primary btn-sm">{{ action.displayText }}</button>
+      </span> -->
+
+    </div>
+  </div>
+</div>
+<div class="container">
+
+  <div>
+    <h6>SUB MENU ITEMS</h6>
+    <table class="table table-sm table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">TITLE</th>
+          <th scope="col">CODE</th>
+          <th scope="col">LINK</th>
+          <th scope="col" style="width: 10%;">ACTIONS</th>
+          <th scope="col" style="width: 5%;">REMOVE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let model of subMenuItems">
+          <td>{{ model.subMenuItemId }}</td>
+          <td>{{ model.title }}</td>
+          <td>{{ model.code }}</td>
+          <td>{{ model.link }}</td>
+          <td>
+            <button (click)="updateBtnClicked(model)" type="button" class="btn btn-primary btn-sm" aria-label="Close">UPDATE
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-danger btn-sm" aria-label="Close">REMOVE
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
